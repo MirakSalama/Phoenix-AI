@@ -1,0 +1,153 @@
+[
+  {
+    "Id": "lfm230",
+    "Label": "LFM2.5 230M chat (NPU, GPU, and CPU)",
+    "Files": [
+      {
+        "Folder": "lfm25-230m",
+        "File": "LFM2.5-230M-Q4_K_M.gguf",
+        "Bytes": 153406304,
+        "Hash": "7bbd90384d3deffe4c646ec9643b212802d32d4ce417c90a1ec9282100650062",
+        "Url": "https://huggingface.co/LiquidAI/LFM2.5-230M-GGUF/resolve/03502067c64ce32ac4fe87b0cec0310a1a13d3e9/LFM2.5-230M-Q4_K_M.gguf?download=true"
+      },
+      {
+        "Folder": "lfm25-230m",
+        "File": "model.safetensors",
+        "Bytes": 459401112,
+        "Hash": "f630da86651136c9aee893b04b7542007e90fdd718355358e57e7ecc31517cfd",
+        "Url": "https://huggingface.co/LiquidAI/LFM2.5-230M/resolve/40cb2ad3b3044d5a41eee083a6103c8b523afa45/model.safetensors?download=true"
+      },
+      {
+        "Folder": "lfm25-230m",
+        "File": "tokenizer.json",
+        "Bytes": 4733389,
+        "Hash": "df1d8d5ec5d091b460562ffd545e4a5e91d17d4a0db7ebe733be34ed374377bd",
+        "Url": "https://huggingface.co/LiquidAI/LFM2.5-230M/resolve/40cb2ad3b3044d5a41eee083a6103c8b523afa45/tokenizer.json?download=true"
+      },
+      {
+        "Folder": "lfm25-230m",
+        "File": "chat_template.jinja",
+        "Bytes": 4762,
+        "Hash": "c5b67247c9f736f6c40eaa91ae1ef27dc67f5b041eedaadb97a1bea5030fb0ff",
+        "Url": "https://huggingface.co/LiquidAI/LFM2.5-230M/resolve/40cb2ad3b3044d5a41eee083a6103c8b523afa45/chat_template.jinja?download=true"
+      },
+      {
+        "Folder": "lfm25-230m",
+        "File": "LICENSE",
+        "Bytes": 10574,
+        "Hash": "30adf9d6478191fb87f2424f63ba0728598335aaf99cd2848ef17e8e545fe94b",
+        "Url": "https://huggingface.co/LiquidAI/LFM2.5-230M/resolve/40cb2ad3b3044d5a41eee083a6103c8b523afa45/LICENSE?download=true"
+      }
+    ]
+  },
+  {
+    "Id": "parakeet",
+    "Label": "Parakeet dictation (NPU and CPU)",
+    "Files": [
+      {
+        "Folder": "parakeet",
+        "File": "encoder-model.int8.onnx",
+        "Bytes": 652184014,
+        "Hash": "3e0581fda6ab843888b51e56d7ee78b6d5bc3237ec113af1f732d1d5286aa155",
+        "Url": "https://huggingface.co/istupakov/parakeet-tdt-0.6b-v2-onnx/resolve/0bbb45a3365852604aef28b538a8f066f4ccaa85/encoder-model.int8.onnx?download=true"
+      },
+      {
+        "Folder": "parakeet",
+        "File": "encoder.xclbin",
+        "Bytes": 289070,
+        "Hash": "4a6c6e24101b5ecbdc21c8b40629772b60b5e24f754d82ab0897bdf17d842781",
+        "Url": "https://github.com/AbhiramJayasankar/ryzenai-npu-lab/releases/download/model-v1/encoder.xclbin"
+      },
+      {
+        "Folder": "parakeet",
+        "File": "insts_0.bin",
+        "Bytes": 667584,
+        "Hash": "6944b8aac78222c72f220b8dbc8fde2dfef150fd8bf476362806ff848a108cc0",
+        "Url": "https://github.com/AbhiramJayasankar/ryzenai-npu-lab/releases/download/model-v1/insts_0.bin"
+      },
+      {
+        "Folder": "parakeet",
+        "File": "insts_1.bin",
+        "Bytes": 665008,
+        "Hash": "159e9b5cfe1baaa8a20dad021c39ca7fe6b495327a0df38bed1dfadacacdcbe1",
+        "Url": "https://github.com/AbhiramJayasankar/ryzenai-npu-lab/releases/download/model-v1/insts_1.bin"
+      },
+      {
+        "Folder": "parakeet",
+        "File": "ctrl.bin",
+        "Bytes": 8667136,
+        "Hash": "b436e7918ce5d08ed45a5d81a3b0e538bcde909a5e3bb23e7ced0d242718cbac",
+        "Url": "https://github.com/AbhiramJayasankar/ryzenai-npu-lab/releases/download/model-v1/ctrl.bin"
+      },
+      {
+        "Folder": "parakeet",
+        "File": "pos.bin",
+        "Bytes": 12582912,
+        "Hash": "b318812aa4f862e8af5e17ee12c574f5b37fa5250f53e8ceac59bf2535cd3aeb",
+        "Url": "https://github.com/AbhiramJayasankar/ryzenai-npu-lab/releases/download/model-v1/pos.bin"
+      },
+      {
+        "Folder": "parakeet",
+        "File": "weights.bin",
+        "Bytes": 1159692288,
+        "Hash": "8e8ca1cd05cee7991de3e90de62a378427df440e19b6de923740f565325dcea9",
+        "Url": "https://github.com/AbhiramJayasankar/ryzenai-npu-lab/releases/download/model-v1/weights.bin"
+      },
+      {
+        "Folder": "parakeet",
+        "File": "encoder_prefix.onnx",
+        "Bytes": 17353300,
+        "Hash": "1fabcab0b0c6a71b2521a9a970bb1d291a44d046eae34bcdbbdeb89330907e4e",
+        "Url": "https://github.com/AbhiramJayasankar/ryzenai-npu-lab/releases/download/model-v1/encoder_prefix.onnx"
+      },
+      {
+        "Folder": "parakeet",
+        "File": "nemo128.onnx",
+        "Bytes": 139764,
+        "Hash": "a9fde1486ebfcc08f328d75ad4610c67835fea58c73ba57e3209a6f6cf019e9f",
+        "Url": "https://github.com/AbhiramJayasankar/ryzenai-npu-lab/releases/download/model-v1/nemo128.onnx"
+      },
+      {
+        "Folder": "parakeet",
+        "File": "decoder_joint-model.onnx",
+        "Bytes": 35792059,
+        "Hash": "cbb52a07bd70ab5b67f8439d4b3cd8704b18467b4430bcacb5adabe154b8d191",
+        "Url": "https://github.com/AbhiramJayasankar/ryzenai-npu-lab/releases/download/model-v1/decoder_joint-model.onnx"
+      },
+      {
+        "Folder": "parakeet",
+        "File": "vocab.txt",
+        "Bytes": 9384,
+        "Hash": "ec182b70dd42113aff6c5372c75cac58c952443eb22322f57bbd7f53977d497d",
+        "Url": "https://github.com/AbhiramJayasankar/ryzenai-npu-lab/releases/download/model-v1/vocab.txt"
+      },
+      {
+        "Folder": "parakeet",
+        "File": "manifest.json",
+        "Bytes": 1621,
+        "Hash": "0b816029ec9e865de75bbd4c8046f0b93ab07a06233294f21d69f60da8c2716d",
+        "Url": "https://github.com/AbhiramJayasankar/ryzenai-npu-lab/releases/download/model-v1/manifest.json"
+      }
+    ]
+  },
+  {
+    "Id": "kokoro",
+    "Label": "Kokoro speech output",
+    "Files": [
+      {
+        "Folder": "voice",
+        "File": "kokoro-v1.0.onnx",
+        "Bytes": 325532387,
+        "Hash": "7d5df8ecf7d4b1878015a32686053fd0eebe2bc377234608764cc0ef3636a6c5",
+        "Url": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx"
+      },
+      {
+        "Folder": "voice",
+        "File": "voices-v1.0.bin",
+        "Bytes": 28214398,
+        "Hash": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
+        "Url": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin"
+      }
+    ]
+  }
+]

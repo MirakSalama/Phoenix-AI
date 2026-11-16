@@ -169,7 +169,7 @@ Copy-Files (Join-Path $project 'apps\npu_dictate') (Join-Path $release 'apps\npu
     'chunker.py', 'engine.py', 'npu_runtime.py', 'win32.py'
 )
 $downloadables = Join-Path $release 'Downloadables'
-Copy-Files $sources $downloadables @('Get-Model.cmd', 'Get-Model.ps1', 'Downloadables.md')
+Copy-Files $sources $downloadables @('Get-Model.cmd', 'Get-Model.ps1', 'Downloadables.md', 'Starter-Models.json')
 Copy-Files $sources $release @('Read me.md', 'Third-party notices.md')
 Copy-Item -LiteralPath (Join-Path $cache 'iron\xrt_sdk\xrt\license\LICENSE') -Destination (Join-Path $release 'XRT-LICENSE.txt')
 $net = Join-Path $cache 'nuget\microsoft.netcore.app.runtime.win-x64'

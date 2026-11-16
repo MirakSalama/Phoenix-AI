@@ -4,6 +4,8 @@
 
 Phoenix AI is an experimental **local AI chat and voice app for Windows** built around the **first-generation AMD XDNA 1 NPU** in Ryzen AI Phoenix and Hawk Point laptops. It started as a way to put an overlooked, “orphaned” laptop NPU to work.
 
+**Try it on Windows x64.** [Download the portable preview](https://github.com/MirakSalama/Phoenix-AI/releases/tag/v0.1.0-preview.1) and follow the [first-run instructions](dist/README.md). Download chat and voice models separately using the included helper. [Share your hardware and test results](https://github.com/MirakSalama/Phoenix-AI/discussions/4).
+
 ## AMD Ryzen AI and XDNA 1 support
 
 - **Local LLM chat on the NPU.** Phoenix runs LFM2.5 230M on AMD XDNA 1 using custom IRON and XRT programs.
@@ -25,7 +27,7 @@ The [experiment index](experiments/README.md) includes runnable probes, measurem
 
 The Windows UI lives in `apps/npu_chat_winui`. Python runners, custom NPU kernels, benchmarks, and their setup notes live under `experiments`. `Run-Phoenix-AI.bat` starts the development app once its local runtime and base model are set up. See [NPU chat setup](experiments/010_handoff.md) for the development environment and [portable packaging](scripts/package-phoenix.ps1) for the Windows release layout.
 
-Model weights, SDKs, built runtimes, caches, and local user data are kept outside the source snapshot. The current [model download helper](scripts/portable/Downloadables.md) covers optional CPU and GPU models. Matching AMD NPU programs, base weights, and speech assets must be prepared separately.
+Model weights, SDKs, built runtimes, caches, and local user data are kept outside the source snapshot. The [model download helper](scripts/portable/Downloadables.md) installs starter chat and voice assets and optional models. The portable preview includes the compiled XDNA 1 programs for LFM2.5 230M. Other models need matching NPU programs and checkpoints to run on the NPU.
 
 In **Models & Tools → Manage Models**, use **Check for updates** to compare chat models, D1, Parakeet, and Kokoro against publisher metadata. Phoenix reports differences and flags voice or NPU updates that need a new compatible bundle. Checking versions leaves installed files in place.
 

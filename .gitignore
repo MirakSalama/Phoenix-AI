@@ -1,6 +1,7 @@
 /.vs/
 /cache/
-/dist/
+/dist/*
+!/dist/README.md
 /Models/
 /runtime/
 /Downloadables/

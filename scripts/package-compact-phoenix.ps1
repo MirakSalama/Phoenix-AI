@@ -1,6 +1,7 @@
 param(
     [ValidatePattern('^Phoenix-AI-[A-Za-z0-9._-]+$')][string]$Name = 'Phoenix-AI-Portable-win-x64',
-    [string]$RuntimeFrom
+    [string]$RuntimeFrom,
+    [switch]$NoModels
 )
 
 $ErrorActionPreference = 'Stop'
@@ -12,6 +13,9 @@ $release = Join-Path $dist $Name
 $installedApp = Join-Path $release 'App'
 $installedModels = Join-Path $release 'Models'
 $refresh = Test-Path -LiteralPath $release
+if ($NoModels -and $refresh) {
+    throw 'Choose a fresh release name to build a package without model files.'
+}
 $stage = Join-Path $dist ".$Name-stage"
 $build = Join-Path $stage 'LauncherBuild'
 if ($refresh) {
@@ -57,7 +61,7 @@ function Copy-Asset([string]$From, [string]$To) {
     $item = Get-Item -LiteralPath $From
     $parent = Split-Path -Parent $To
     if (!(Test-Path -LiteralPath $parent)) { [void](New-Item -ItemType Directory -Path $parent -Force) }
-    if ($item.Length -ge 16MB) {
+    if (!$NoModels -and $item.Length -ge 16MB) {
         [void](New-Item -ItemType HardLink -Path $To -Target $item.FullName)
     } else {
         Copy-Item -LiteralPath $item.FullName -Destination $To -Force
@@ -69,6 +73,7 @@ function Copy-Assets([string]$From, [string]$To) {
     foreach ($item in Get-ChildItem -LiteralPath $base -Recurse -File) {
         if ($item.Extension -in '.pdb', '.pyc') { continue }
         $relative = $item.FullName.Substring($base.Length + 1)
+        if ($NoModels -and $relative -match '(?:^|\\)onnxruntime\\datasets\\') { continue }
         Copy-Asset $item.FullName (Join-Path $To $relative)
     }
 }
@@ -117,6 +122,9 @@ $restore = @('restore', $csproj, '-r', 'win-x64', '-p:PhoenixPortable=true', '-p
 if ($LASTEXITCODE -ne 0) { throw 'Offline restore failed.' }
 & dotnet publish $csproj -c Release -r win-x64 --self-contained true -p:PhoenixPortable=true --no-restore -o $app
 if ($LASTEXITCODE -ne 0) { throw 'Phoenix publish failed.' }
+if ($NoModels) {
+    Get-ChildItem -LiteralPath $app -File -Recurse -Filter '*.pdb' | Remove-Item
+}
 $compiled = Join-Path $project 'apps\npu_chat_winui\bin\Release\net10.0-windows10.0.19041.0\win-x64'
 foreach ($component in @('PhoenixAI.pri', 'App.xbf', 'MainWindow.xbf', 'VoiceOrb.xbf')) {
     Copy-Asset (Join-Path $compiled $component) (Join-Path $app $component)
@@ -160,7 +168,7 @@ if ($refresh) {
         throw
     }
     Remove-StagingTree $stage
-} else {
+} elseif (!$NoModels) {
     Write-Host 'Adding bundled and already installed models'
     foreach ($component in @('lfm25-230m', 'parakeet', 'voice')) {
         Copy-Assets (Join-Path $modelSource $component) (Join-Path $models $component)
@@ -173,8 +181,13 @@ if ($refresh) {
     if ((Test-Path -LiteralPath $router) -and !(Test-Path -LiteralPath (Join-Path $router 'LICENSE'))) {
         Copy-Asset (Join-Path $modelSource 'lfm25-230m\LICENSE') (Join-Path $router 'LICENSE')
     }
-    foreach ($component in @('Get-Model.cmd', 'Get-Model.ps1', 'Downloadables.md', 'Read me.md')) {
+}
+if (!$refresh) {
+    foreach ($component in @('Get-Model.cmd', 'Get-Model.ps1', 'Downloadables.md', 'Read me.md', 'Starter-Models.json')) {
         Copy-Asset (Join-Path $sources $component) (Join-Path $models $component)
+    }
+    if ($NoModels) {
+        Copy-Asset (Join-Path $sources 'Release setup.md') (Join-Path $models 'Read me.md')
     }
     [IO.Directory]::Move($stage, $release)
 }

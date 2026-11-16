@@ -1,9 +1,9 @@
 param(
-    [ValidateSet('lfm350', 'lfm3', 'qwen', 'gemma', 'd1')][string]$Model,
+    [ValidateSet('lfm230', 'parakeet', 'kokoro', 'lfm350', 'lfm3', 'qwen', 'gemma', 'd1')][string]$Model,
     [string]$FromFile
 )
 $ErrorActionPreference = 'Stop'
-$catalog = [ordered]@{
+$optional = [ordered]@{
     lfm350 = @{
         Folder = 'lfm25-350m'; File = 'LFM2.5-350M-Q4_K_M.gguf'; Bytes = 229312224L
         Source = 'https://huggingface.co/LiquidAI/LFM2.5-350M-GGUF/resolve/bb7ee58b243e4cede04187e323e760b04f8a0091'
@@ -30,6 +30,22 @@ $catalog = [ordered]@{
         Hash = 'cd94463f4cac9c700ec6750df8df005bb6846de410e159d1f5e985e1171693d3'
     }
 }
+$catalog = [ordered]@{}
+$starterPath = Join-Path $PSScriptRoot 'Starter-Models.json'
+if (Test-Path -LiteralPath $starterPath) {
+    $starter = Get-Content -LiteralPath $starterPath -Raw | ConvertFrom-Json
+    foreach ($group in $starter) { $catalog[$group.id] = $group }
+}
+foreach ($id in $optional.Keys) {
+    $entry = $optional[$id]
+    $catalog[$id] = @{
+        Label = $entry.File
+        Files = @(@{
+            Folder = $entry.Folder; File = $entry.File; Bytes = $entry.Bytes; Hash = $entry.Hash
+            Url = "$($entry.Source)/$($entry.File)?download=true"
+        })
+    }
+}
 $root = Split-Path -Parent $PSScriptRoot
 if (Test-Path -LiteralPath (Join-Path $root 'App\phoenix-compact.release')) {
     $modelRoot = $PSScriptRoot
@@ -42,22 +58,28 @@ if (!$Model) {
     $choices = @($catalog.Keys)
     for ($i = 0; $i -lt $choices.Count; $i++) {
         $entry = $catalog[$choices[$i]]
-        Write-Host ("{0}. {1} ({2:N2} GB)" -f ($i + 1), $entry.File, ($entry.Bytes / 1e9))
+        $bytes = ($entry.Files | ForEach-Object { $_.Bytes } | Measure-Object -Sum).Sum
+        Write-Host ("{0}. {1} ({2:N2} GB)" -f ($i + 1), $entry.Label, ($bytes / 1e9))
     }
     $selection = Read-Host 'Select a model by number or press Enter to close'
     if ($selection -notmatch '^[1-9][0-9]?$' -or [int]$selection -gt $choices.Count) { exit 0 }
     $Model = $choices[[int]$selection - 1]
 }
-$entry = $catalog[$Model]
-$destination = Join-Path $modelRoot $entry.Folder
-$file = Join-Path $destination $entry.File
-$url = "$($entry.Source)/$($entry.File)"
-function Test-Model([string]$Path) {
+function Test-Model([string]$Path, $Entry) {
     if (!(Test-Path -LiteralPath $Path -PathType Leaf)) { return $false }
     return ((Get-Item -LiteralPath $Path).Length -eq $entry.Bytes) -and
         ((Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash -eq $entry.Hash)
 }
-if (Test-Model $file) {
+$group = $catalog[$Model]
+if (!$group) { throw 'This package does not include that download. Use a current Phoenix AI release.' }
+if ($FromFile -and $group.Files.Count -ne 1) {
+    throw 'Import one-file models with -FromFile. Select a starter model group to download its files together.'
+}
+$pending = @($group.Files | Where-Object {
+    $target = Join-Path (Join-Path $modelRoot $_.Folder) $_.File
+    !(Test-Model $target $_)
+})
+if (!$pending.Count) {
     if ($Model -eq 'd1') {
         Write-Host 'The d1-omni-600M router is already installed. Find its toggle in Phoenix Settings.'
     } else {
@@ -66,36 +88,44 @@ if (Test-Model $file) {
     exit 0
 }
 if ($FromFile) {
-    if (!(Test-Model $FromFile)) { throw 'The selected file does not match the publisher checksum and size.' }
+    if (!(Test-Model $FromFile $pending[0])) { throw 'The selected file does not match the publisher checksum and size.' }
 } else {
-    Write-Host ("File     {0}" -f $entry.File)
-    Write-Host ("Source   {0}" -f $url)
-    Write-Host ("Size     {0:N0} bytes ({1:N2} GB)" -f $entry.Bytes, ($entry.Bytes / 1e9))
-    if ($entry.Bytes -gt 2000000000) { Write-Host 'This file exceeds 2 GB.' }
-    if ((Read-Host 'Type DOWNLOAD to approve this file') -cne 'DOWNLOAD') { exit 0 }
+    foreach ($entry in $pending) {
+        Write-Host ("File     {0}" -f $entry.File)
+        Write-Host ("Source   {0}" -f $entry.Url)
+        Write-Host ("Size     {0:N0} bytes ({1:N2} GB)" -f $entry.Bytes, ($entry.Bytes / 1e9))
+        if ($entry.Bytes -gt 2000000000) { Write-Host 'This file exceeds 2 GB.' }
+    }
+    if ((Read-Host 'Type DOWNLOAD to approve the listed files') -cne 'DOWNLOAD') { exit 0 }
 }
-[void](New-Item -Path $destination -ItemType Directory -Force)
-$temporary = "$file.$([guid]::NewGuid().ToString('N')).partial"
-try {
-    if ($FromFile) { Copy-Item -LiteralPath $FromFile -Destination $temporary }
-    else {
-        $transfer = @('--fail', '--location', '--proto', '=https', '--proto-redir', '=https',
-            '--connect-timeout', '30', '--progress-bar', '--max-filesize', $entry.Bytes,
-            '--output', $temporary, ($url + '?download=true'))
-        & curl.exe @transfer
-        if ($LASTEXITCODE -ne 0) { throw "Download failed (curl exit code $LASTEXITCODE)." }
+foreach ($entry in $pending) {
+    $destination = Join-Path $modelRoot $entry.Folder
+    [void](New-Item -Path $destination -ItemType Directory -Force)
+    $file = Join-Path $destination $entry.File
+    $temporary = "$file.$([guid]::NewGuid().ToString('N')).partial"
+    try {
+        if ($FromFile) { Copy-Item -LiteralPath $FromFile -Destination $temporary }
+        else {
+            $transfer = @('--fail', '--location', '--proto', '=https', '--proto-redir', '=https',
+                '--connect-timeout', '30', '--progress-bar', '--max-filesize', $entry.Bytes,
+                '--output', $temporary, $entry.Url)
+            & curl.exe @transfer
+            if ($LASTEXITCODE -ne 0) { throw "Download failed for $($entry.File) (curl exit code $LASTEXITCODE)." }
+        }
+        if (!(Test-Model $temporary $entry)) {
+            throw "$($entry.File) does not match the expected checksum and size."
+        }
+        if (Test-Path -LiteralPath $file) {
+            [IO.File]::Replace($temporary, $file, [NullString]::Value)
+        } else {
+            [IO.File]::Move($temporary, $file)
+        }
+    } finally {
+        if (Test-Path -LiteralPath $temporary) { Remove-Item -LiteralPath $temporary -Force }
     }
-    if (!(Test-Model $temporary)) { throw 'The downloaded file does not match the publisher checksum and size.' }
-    if (Test-Path -LiteralPath $file) {
-        [IO.File]::Replace($temporary, $file, $null)
-    } else {
-        [IO.File]::Move($temporary, $file)
-    }
-    if ($Model -eq 'd1') {
-        Write-Host 'Installed the d1-omni-600M router. Its toggle is in Phoenix Settings.'
-    } else {
-        Write-Host "Installed $($entry.File). Restart Phoenix and choose it in the model picker."
-    }
-} finally {
-    if (Test-Path -LiteralPath $temporary) { Remove-Item -LiteralPath $temporary -Force }
+}
+if ($Model -eq 'd1') {
+    Write-Host 'Installed the d1-omni-600M router. Its toggle is in Phoenix Settings.'
+} else {
+    Write-Host "Installed $($group.Label). Start or restart Phoenix AI."
 }
