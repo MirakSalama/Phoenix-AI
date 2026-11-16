@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="night" gradientUnits="userSpaceOnUse" x1="10" y1="6" x2="112" y2="126">
+      <stop offset="0" stop-color="#26344F"/>
+      <stop offset="1" stop-color="#101724"/>
+    </linearGradient>
+    <linearGradient id="fire" gradientUnits="userSpaceOnUse" x1="49" y1="31" x2="76" y2="108">
+      <stop offset="0" stop-color="#FFE1A0"/>
+      <stop offset="0.48" stop-color="#FFAD64"/>
+      <stop offset="1" stop-color="#F56856"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="url(#night)" stroke="#3F4B65" stroke-width="2"/>
+  <path fill="#FFD18B" d="M 65 14 L 70 21 L 65 28 L 60 21 Z"/>
+  <path fill="url(#fire)" d="M 64 109 C 60 98 54 93 47 88 C 28 82 16 61 12 32 C 25 46 39 47 49 54 C 54 57 57 61 59 65 C 55 52 59 42 68 37 C 72 35 77 35 81 39 L 73 42 C 67 45 68 55 72 63 C 77 56 84 52 93 49 C 103 45 111 39 116 32 C 112 61 99 82 80 88 C 73 93 68 98 64 109 Z"/>
+  <path fill="#2E2C3B" d="M 24 56 C 33 65 42 68 51 72 C 55 74 58 77 60 81 C 45 76 33 74 24 56 Z"/>
+  <path fill="#2E2C3B" d="M 104 56 C 95 65 86 68 77 72 C 73 74 70 77 68 81 C 83 76 95 74 104 56 Z"/>
+</svg>

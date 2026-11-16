@@ -1,0 +1,2822 @@
+{
+  "started_utc": "2026-11-10T17:46:00.704075+00:00",
+  "model": "LFM2.5-230M-Q4_K_M.gguf",
+  "model_bytes": 153406304,
+  "runtime": "version: 0.9.0-dev (build 12189, commit 80d2c0c2c)\nbuilt with Clang 20.1.8 for Windows x86_64",
+  "device": {
+    "Id": "Vulkan1",
+    "Name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "Integrated": false,
+    "FreeMiB": 5152
+  },
+  "nvidia_driver": "NVIDIA GeForce RTX 4050 Laptop GPU, 621.14, 6141 MiB",
+  "context_per_slot": 2048,
+  "requested_slots": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "repeats": 3,
+  "fixed_jobs": 16,
+  "fixed_tokens_per_job": 96,
+  "quality_jobs": 16,
+  "runs": [
+    {
+      "round": 1,
+      "slots": 1,
+      "startup_seconds": 0.9926209999994171,
+      "observed_busy_slots": 1,
+      "wall_seconds": 3.661538299998938,
+      "output_tokens": 1536,
+      "aggregate_tokens_per_second": 419.4958168266178,
+      "first_workload_seconds": 3.262818999999581,
+      "first_workload_busy_slots": 1,
+      "first_workload_tokens_per_second": 470.75856797456345,
+      "median_first_token_seconds": 0.012089600000763312,
+      "median_job_seconds": 0.23044729999946867,
+      "quality_seconds": 0.5868355999991763,
+      "correct": 6,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?\nA. 32\nB. 42\nC. 41\nD. 52\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?\nA. 63\nB. 56\nC. 67\nD. 72\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "What is 81 divided by 9?\nA. 8\nB. 10\nC. 11\nD. 9\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.\nA. 28\nB. 32\nC. 38\nD. 42\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?\nA. red\nB. blue\nC. green\nD. yellow\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?\nA. 23\nB. 17\nC. 20\nD. 32\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?\nA. 8\nB. 12\nC. 25\nD. 5\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.\nA. K8\nB. B8\nC. B2\nD. K2\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?\nA. Dana\nB. Eli\nC. Noor\nD. Mira\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?\nA. triangle\nB. circle\nC. square\nD. hexagon\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "The meeting was moved from 11:30 to 13:00. Give the new time.\nA. 11:30\nB. 13:30\nC. 12:00\nD. 13:00\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which number is largest: 17, 23, 32, or 30?\nA. 17\nB. 23\nC. 32\nD. 30\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which option exactly matches the identifier PX-71?\nA. XP-71\nB. PX-71\nC. PX-17\nD. PX-11\nReply with one letter only.",
+          "expected": "B",
+          "answer": "B",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest.\nA. 3, 5, 8\nB. 3, 8, 5\nC. 5, 3, 8\nD. 8, 5, 3\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Which number is even?\nA. 13\nB. 15\nC. 17\nD. 14\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is the capital of France?\nA. Rome\nB. Berlin\nC. Paris\nD. Madrid\nReply with one letter only.",
+          "expected": "C",
+          "answer": "C",
+          "correct": true
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 0.22001819999968575,
+          "first_token_seconds": 0.01119020000078308,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2660.189683090446
+        },
+        {
+          "seconds": 0.21894570000040403,
+          "first_token_seconds": 0.014287799998783157,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2008.7336244541484
+        },
+        {
+          "seconds": 0.23680770000100893,
+          "first_token_seconds": 0.010920300001089345,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2811.2920229588844
+        },
+        {
+          "seconds": 0.21730590000152006,
+          "first_token_seconds": 0.011548600001333398,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2273.666804464655
+        },
+        {
+          "seconds": 0.23969920000126876,
+          "first_token_seconds": 0.028041200001098332,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1712.5837676842891
+        },
+        {
+          "seconds": 0.21300730000075419,
+          "first_token_seconds": 0.009856500000751112,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2741.4330218068535
+        },
+        {
+          "seconds": 0.23629079999955138,
+          "first_token_seconds": 0.03409219999957713,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2388.7079261672093
+        },
+        {
+          "seconds": 0.23180199999842444,
+          "first_token_seconds": 0.028234099998371676,
+          "input_tokens": 25,
+          "output_tokens": 96,
+          "prompt_per_second": 2892.179546506247
+        },
+        {
+          "seconds": 0.21618179999859422,
+          "first_token_seconds": 0.010721599999669706,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2701.1156782149146
+        },
+        {
+          "seconds": 0.23287150000032852,
+          "first_token_seconds": 0.031710900000689435,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2709.721124534267
+        },
+        {
+          "seconds": 0.21725900000092224,
+          "first_token_seconds": 0.010353200001190999,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2712.903986789337
+        },
+        {
+          "seconds": 0.2327237999998033,
+          "first_token_seconds": 0.02936079999926733,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2690.5829596412555
+        },
+        {
+          "seconds": 0.2468587999992451,
+          "first_token_seconds": 0.010867399998460314,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2453.4403925504625
+        },
+        {
+          "seconds": 0.24990109999998822,
+          "first_token_seconds": 0.012630600000193226,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2508.6233929131386
+        },
+        {
+          "seconds": 0.2290926000005129,
+          "first_token_seconds": 0.012993000000278698,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2293.349287067504
+        },
+        {
+          "seconds": 0.2215077000000747,
+          "first_token_seconds": 0.01022729999931471,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2713.2240179308715
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 385.59,
+        "gpu_dedicated_mib": 213.92,
+        "gpu_shared_mib": 63.38
+      }
+    },
+    {
+      "round": 1,
+      "slots": 2,
+      "startup_seconds": 0.8092245999996521,
+      "observed_busy_slots": 2,
+      "wall_seconds": 2.3124474000014743,
+      "output_tokens": 1536,
+      "aggregate_tokens_per_second": 664.2313247856019,
+      "first_workload_seconds": 2.038333700000294,
+      "first_workload_busy_slots": 2,
+      "first_workload_tokens_per_second": 753.5566919193744,
+      "median_first_token_seconds": 0.01834289999987959,
+      "median_job_seconds": 0.2925995999994484,
+      "quality_seconds": 0.42863709999983257,
+      "correct": 6,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?\nA. 32\nB. 42\nC. 41\nD. 52\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?\nA. 63\nB. 56\nC. 67\nD. 72\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "What is 81 divided by 9?\nA. 8\nB. 10\nC. 11\nD. 9\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.\nA. 28\nB. 32\nC. 38\nD. 42\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?\nA. red\nB. blue\nC. green\nD. yellow\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?\nA. 23\nB. 17\nC. 20\nD. 32\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?\nA. 8\nB. 12\nC. 25\nD. 5\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.\nA. K8\nB. B8\nC. B2\nD. K2\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?\nA. Dana\nB. Eli\nC. Noor\nD. Mira\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?\nA. triangle\nB. circle\nC. square\nD. hexagon\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "The meeting was moved from 11:30 to 13:00. Give the new time.\nA. 11:30\nB. 13:30\nC. 12:00\nD. 13:00\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which number is largest: 17, 23, 32, or 30?\nA. 17\nB. 23\nC. 32\nD. 30\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which option exactly matches the identifier PX-71?\nA. XP-71\nB. PX-71\nC. PX-17\nD. PX-11\nReply with one letter only.",
+          "expected": "B",
+          "answer": "B",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest.\nA. 3, 5, 8\nB. 3, 8, 5\nC. 5, 3, 8\nD. 8, 5, 3\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Which number is even?\nA. 13\nB. 15\nC. 17\nD. 14\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is the capital of France?\nA. Rome\nB. Berlin\nC. Paris\nD. Madrid\nReply with one letter only.",
+          "expected": "C",
+          "answer": "C",
+          "correct": true
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 0.2514387999999599,
+          "first_token_seconds": 0.012117800000851275,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2456.2152926099952
+        },
+        {
+          "seconds": 0.25070120000054885,
+          "first_token_seconds": 0.011556499999642256,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2474.4486282947823
+        },
+        {
+          "seconds": 0.27346339999894553,
+          "first_token_seconds": 0.01443489999837766,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2023.2675771370764
+        },
+        {
+          "seconds": 0.273001600000498,
+          "first_token_seconds": 0.014095099999394733,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1870.589235609217
+        },
+        {
+          "seconds": 0.2918240999988484,
+          "first_token_seconds": 0.011726699998689583,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2427.4406332453827
+        },
+        {
+          "seconds": 0.2997775999992882,
+          "first_token_seconds": 0.031108099999983096,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1406.4697609001407
+        },
+        {
+          "seconds": 0.29808799999955227,
+          "first_token_seconds": 0.034471700000722194,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1193.9650493867362
+        },
+        {
+          "seconds": 0.2866275999986101,
+          "first_token_seconds": 0.01760389999981271,
+          "input_tokens": 25,
+          "output_tokens": 96,
+          "prompt_per_second": 1637.089908977801
+        },
+        {
+          "seconds": 0.2933751000000484,
+          "first_token_seconds": 0.013360699998884229,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2244.7784501268784
+        },
+        {
+          "seconds": 0.32137259999944945,
+          "first_token_seconds": 0.0427611999984947,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1487.72625836846
+        },
+        {
+          "seconds": 0.2971856000003754,
+          "first_token_seconds": 0.02717300000040268,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1716.1617669004625
+        },
+        {
+          "seconds": 0.27573909999955504,
+          "first_token_seconds": 0.019081899999946472,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1509.0543259557344
+        },
+        {
+          "seconds": 0.30903810000017984,
+          "first_token_seconds": 0.0373834000001807,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1756.6272756307892
+        },
+        {
+          "seconds": 0.3040762000000541,
+          "first_token_seconds": 0.03710480000154348,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1401.7054082467002
+        },
+        {
+          "seconds": 0.28407049999987066,
+          "first_token_seconds": 0.014198299999407027,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2406.6129538558125
+        },
+        {
+          "seconds": 0.2964326000001165,
+          "first_token_seconds": 0.04090629999882367,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1236.8251236825122
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 382.91,
+        "gpu_dedicated_mib": 240.53,
+        "gpu_shared_mib": 62.88
+      }
+    },
+    {
+      "round": 1,
+      "slots": 4,
+      "startup_seconds": 0.7438373000004503,
+      "observed_busy_slots": 4,
+      "wall_seconds": 1.414963400000488,
+      "output_tokens": 1536,
+      "aggregate_tokens_per_second": 1085.5404457807674,
+      "first_workload_seconds": 1.3195242999991024,
+      "first_workload_busy_slots": 4,
+      "first_workload_tokens_per_second": 1164.0558646786913,
+      "median_first_token_seconds": 0.03533599999991566,
+      "median_job_seconds": 0.3447192499997982,
+      "quality_seconds": 0.37701040000138164,
+      "correct": 6,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?\nA. 32\nB. 42\nC. 41\nD. 52\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?\nA. 63\nB. 56\nC. 67\nD. 72\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "What is 81 divided by 9?\nA. 8\nB. 10\nC. 11\nD. 9\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.\nA. 28\nB. 32\nC. 38\nD. 42\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?\nA. red\nB. blue\nC. green\nD. yellow\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?\nA. 23\nB. 17\nC. 20\nD. 32\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?\nA. 8\nB. 12\nC. 25\nD. 5\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.\nA. K8\nB. B8\nC. B2\nD. K2\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?\nA. Dana\nB. Eli\nC. Noor\nD. Mira\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?\nA. triangle\nB. circle\nC. square\nD. hexagon\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "The meeting was moved from 11:30 to 13:00. Give the new time.\nA. 11:30\nB. 13:30\nC. 12:00\nD. 13:00\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which number is largest: 17, 23, 32, or 30?\nA. 17\nB. 23\nC. 32\nD. 30\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which option exactly matches the identifier PX-71?\nA. XP-71\nB. PX-71\nC. PX-17\nD. PX-11\nReply with one letter only.",
+          "expected": "B",
+          "answer": "B",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest.\nA. 3, 5, 8\nB. 3, 8, 5\nC. 5, 3, 8\nD. 8, 5, 3\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Which number is even?\nA. 13\nB. 15\nC. 17\nD. 14\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is the capital of France?\nA. Rome\nB. Berlin\nC. Paris\nD. Madrid\nReply with one letter only.",
+          "expected": "C",
+          "answer": "C",
+          "correct": true
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 0.33198040000024776,
+          "first_token_seconds": 0.04186239999944519,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1408.8820826952526
+        },
+        {
+          "seconds": 0.3224859000001743,
+          "first_token_seconds": 0.017617800000152783,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1487.51778553874
+        },
+        {
+          "seconds": 0.3256485999991128,
+          "first_token_seconds": 0.024670899998454843,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1319.4788058716806
+        },
+        {
+          "seconds": 0.32969109999976354,
+          "first_token_seconds": 0.03967290000036883,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1354.679802955665
+        },
+        {
+          "seconds": 0.3349672999993345,
+          "first_token_seconds": 0.032310799999322626,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1760.8329505435618
+        },
+        {
+          "seconds": 0.3255613999990601,
+          "first_token_seconds": 0.01564909999979136,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2614.0684410646386
+        },
+        {
+          "seconds": 0.3205264000007446,
+          "first_token_seconds": 0.010497699999177712,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2589.453860640301
+        },
+        {
+          "seconds": 0.3308016000009957,
+          "first_token_seconds": 0.03865120000045863,
+          "input_tokens": 25,
+          "output_tokens": 96,
+          "prompt_per_second": 1629.5137530960762
+        },
+        {
+          "seconds": 0.3660366000003705,
+          "first_token_seconds": 0.0483767000005173,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1227.1247932561491
+        },
+        {
+          "seconds": 0.36667510000006587,
+          "first_token_seconds": 0.04837760000009439,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1265.8227848101264
+        },
+        {
+          "seconds": 0.35525199999938195,
+          "first_token_seconds": 0.0333279999995284,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1687.206572769953
+        },
+        {
+          "seconds": 0.3544712000002619,
+          "first_token_seconds": 0.03734400000030291,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1297.8585334198572
+        },
+        {
+          "seconds": 0.3853101999993669,
+          "first_token_seconds": 0.012099099998522433,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2881.0895756940804
+        },
+        {
+          "seconds": 0.39729260000058275,
+          "first_token_seconds": 0.0469119999997929,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1088.3366588064575
+        },
+        {
+          "seconds": 0.39639960000022256,
+          "first_token_seconds": 0.046116800000163494,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1039.7830018083182
+        },
+        {
+          "seconds": 0.387863699999798,
+          "first_token_seconds": 0.023049299999911455,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1387.2135102533175
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 388.55,
+        "gpu_dedicated_mib": 288.62,
+        "gpu_shared_mib": 64.38
+      }
+    },
+    {
+      "round": 1,
+      "slots": 8,
+      "startup_seconds": 0.9017502999995486,
+      "observed_busy_slots": 8,
+      "wall_seconds": 1.1237378000005265,
+      "output_tokens": 1536,
+      "aggregate_tokens_per_second": 1366.866897241759,
+      "first_workload_seconds": 1.1561225000004924,
+      "first_workload_busy_slots": 8,
+      "first_workload_tokens_per_second": 1328.5789351901253,
+      "median_first_token_seconds": 0.041679199999634875,
+      "median_job_seconds": 0.5572512500002631,
+      "quality_seconds": 5.831144599998879,
+      "correct": 6,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?\nA. 32\nB. 42\nC. 41\nD. 52\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?\nA. 63\nB. 56\nC. 67\nD. 72\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "What is 81 divided by 9?\nA. 8\nB. 10\nC. 11\nD. 9\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.\nA. 28\nB. 32\nC. 38\nD. 42\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?\nA. red\nB. blue\nC. green\nD. yellow\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?\nA. 23\nB. 17\nC. 20\nD. 32\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?\nA. 8\nB. 12\nC. 25\nD. 5\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.\nA. K8\nB. B8\nC. B2\nD. K2\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?\nA. Dana\nB. Eli\nC. Noor\nD. Mira\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?\nA. triangle\nB. circle\nC. square\nD. hexagon\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "The meeting was moved from 11:30 to 13:00. Give the new time.\nA. 11:30\nB. 13:30\nC. 12:00\nD. 13:00\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which number is largest: 17, 23, 32, or 30?\nA. 17\nB. 23\nC. 32\nD. 30\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which option exactly matches the identifier PX-71?\nA. XP-71\nB. PX-71\nC. PX-17\nD. PX-11\nReply with one letter only.",
+          "expected": "B",
+          "answer": "B",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest.\nA. 3, 5, 8\nB. 3, 8, 5\nC. 5, 3, 8\nD. 8, 5, 3\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Which number is even?\nA. 13\nB. 15\nC. 17\nD. 14\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is the capital of France?\nA. Rome\nB. Berlin\nC. Paris\nD. Madrid\nReply with one letter only.",
+          "expected": "C",
+          "answer": "C",
+          "correct": true
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 0.5459131999996316,
+          "first_token_seconds": 0.028150099999038503,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 934.5034942304567
+        },
+        {
+          "seconds": 0.5532332000002498,
+          "first_token_seconds": 0.04589710000072955,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 634.0280074980703
+        },
+        {
+          "seconds": 0.5514369000011357,
+          "first_token_seconds": 0.044962500000110595,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 666.2410126863392
+        },
+        {
+          "seconds": 0.5504720999997517,
+          "first_token_seconds": 0.044282400000156485,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 602.0634355928958
+        },
+        {
+          "seconds": 0.5507503999997425,
+          "first_token_seconds": 0.04455479999887757,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 630.2405874938346
+        },
+        {
+          "seconds": 0.5502602999986266,
+          "first_token_seconds": 0.04442380000000412,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 600.1418517104042
+        },
+        {
+          "seconds": 0.5500642999995762,
+          "first_token_seconds": 0.043948900000032154,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 596.3029218843172
+        },
+        {
+          "seconds": 0.5493007000004582,
+          "first_token_seconds": 0.04347250000137137,
+          "input_tokens": 25,
+          "output_tokens": 96,
+          "prompt_per_second": 672.2960253858979
+        },
+        {
+          "seconds": 0.567605199999889,
+          "first_token_seconds": 0.029824299999745563,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1116.6132634236333
+        },
+        {
+          "seconds": 0.5612693000002764,
+          "first_token_seconds": 0.023787699999957113,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1177.336276674025
+        },
+        {
+          "seconds": 0.5705653999993956,
+          "first_token_seconds": 0.04178239999964717,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 738.3390581361754
+        },
+        {
+          "seconds": 0.5698916000001191,
+          "first_token_seconds": 0.04090870000072755,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 766.2835249042146
+        },
+        {
+          "seconds": 0.5698369000001549,
+          "first_token_seconds": 0.04104949999964447,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 699.9681832643971
+        },
+        {
+          "seconds": 0.5700985999992554,
+          "first_token_seconds": 0.04157599999962258,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 757.4323044877864
+        },
+        {
+          "seconds": 0.5697630000013305,
+          "first_token_seconds": 0.04107099999964703,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 732.6240682933045
+        },
+        {
+          "seconds": 0.5698564999984228,
+          "first_token_seconds": 0.0414719000000332,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 720.0776431545662
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 513.16,
+        "gpu_dedicated_mib": 381.7,
+        "gpu_shared_mib": 69.38
+      }
+    },
+    {
+      "round": 2,
+      "slots": 2,
+      "startup_seconds": 0.9371585000008054,
+      "observed_busy_slots": 2,
+      "wall_seconds": 2.4428242000012688,
+      "output_tokens": 1536,
+      "aggregate_tokens_per_second": 628.7804091670625,
+      "first_workload_seconds": 2.152954499999396,
+      "first_workload_busy_slots": 2,
+      "first_workload_tokens_per_second": 713.4382078211272,
+      "median_first_token_seconds": 0.0219941999994262,
+      "median_job_seconds": 0.3042822999996133,
+      "quality_seconds": 0.4247159999995347,
+      "correct": 6,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?\nA. 32\nB. 42\nC. 41\nD. 52\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?\nA. 63\nB. 56\nC. 67\nD. 72\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "What is 81 divided by 9?\nA. 8\nB. 10\nC. 11\nD. 9\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.\nA. 28\nB. 32\nC. 38\nD. 42\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?\nA. red\nB. blue\nC. green\nD. yellow\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?\nA. 23\nB. 17\nC. 20\nD. 32\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?\nA. 8\nB. 12\nC. 25\nD. 5\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.\nA. K8\nB. B8\nC. B2\nD. K2\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?\nA. Dana\nB. Eli\nC. Noor\nD. Mira\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?\nA. triangle\nB. circle\nC. square\nD. hexagon\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "The meeting was moved from 11:30 to 13:00. Give the new time.\nA. 11:30\nB. 13:30\nC. 12:00\nD. 13:00\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which number is largest: 17, 23, 32, or 30?\nA. 17\nB. 23\nC. 32\nD. 30\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which option exactly matches the identifier PX-71?\nA. XP-71\nB. PX-71\nC. PX-17\nD. PX-11\nReply with one letter only.",
+          "expected": "B",
+          "answer": "B",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest.\nA. 3, 5, 8\nB. 3, 8, 5\nC. 5, 3, 8\nD. 8, 5, 3\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Which number is even?\nA. 13\nB. 15\nC. 17\nD. 14\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is the capital of France?\nA. Rome\nB. Berlin\nC. Paris\nD. Madrid\nReply with one letter only.",
+          "expected": "C",
+          "answer": "C",
+          "correct": true
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 0.279047799998807,
+          "first_token_seconds": 0.016429999999672873,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1735.3251848498567
+        },
+        {
+          "seconds": 0.2827412999995431,
+          "first_token_seconds": 0.024591100000179722,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1252.5186516364429
+        },
+        {
+          "seconds": 0.28608970000095724,
+          "first_token_seconds": 0.015614900001310161,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2133.7126600284496
+        },
+        {
+          "seconds": 0.2998642000002292,
+          "first_token_seconds": 0.030432999999902677,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1414.3362262937962
+        },
+        {
+          "seconds": 0.2968831999987742,
+          "first_token_seconds": 0.018006599999353057,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1549.1345052872637
+        },
+        {
+          "seconds": 0.33014560000083293,
+          "first_token_seconds": 0.04224090000025171,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1458.4023864766323
+        },
+        {
+          "seconds": 0.3071118000007118,
+          "first_token_seconds": 0.01964640000005602,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1418.4397163120568
+        },
+        {
+          "seconds": 0.3030641999994259,
+          "first_token_seconds": 0.020714799999041134,
+          "input_tokens": 25,
+          "output_tokens": 96,
+          "prompt_per_second": 1411.472448057814
+        },
+        {
+          "seconds": 0.30583219999971334,
+          "first_token_seconds": 0.03121379999902274,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1677.2405746372058
+        },
+        {
+          "seconds": 0.309686700000384,
+          "first_token_seconds": 0.03458109999883163,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1272.8044123886295
+        },
+        {
+          "seconds": 0.29779319999943255,
+          "first_token_seconds": 0.019627699999546167,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1486.940780967158
+        },
+        {
+          "seconds": 0.2973048000003473,
+          "first_token_seconds": 0.020373999999719672,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1447.7891053869819
+        },
+        {
+          "seconds": 0.3215995999998995,
+          "first_token_seconds": 0.033975500000451575,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1328.9036544850499
+        },
+        {
+          "seconds": 0.30944110000018554,
+          "first_token_seconds": 0.02107359999899927,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1385.4413207873924
+        },
+        {
+          "seconds": 0.3055003999998007,
+          "first_token_seconds": 0.02291479999985313,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1210.7812170983366
+        },
+        {
+          "seconds": 0.30900450000081037,
+          "first_token_seconds": 0.042306100000132574,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1365.390323538142
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 411.19,
+        "gpu_dedicated_mib": 238.29,
+        "gpu_shared_mib": 65.62
+      }
+    },
+    {
+      "round": 2,
+      "slots": 4,
+      "startup_seconds": 1.0210702999993373,
+      "observed_busy_slots": 4,
+      "wall_seconds": 1.5046214000012696,
+      "output_tokens": 1536,
+      "aggregate_tokens_per_second": 1020.8548143730402,
+      "first_workload_seconds": 1.3689776999999594,
+      "first_workload_busy_slots": 4,
+      "first_workload_tokens_per_second": 1122.0051283523796,
+      "median_first_token_seconds": 0.023152700000537152,
+      "median_job_seconds": 0.36361980000037875,
+      "quality_seconds": 0.3724872000002506,
+      "correct": 6,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?\nA. 32\nB. 42\nC. 41\nD. 52\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?\nA. 63\nB. 56\nC. 67\nD. 72\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "What is 81 divided by 9?\nA. 8\nB. 10\nC. 11\nD. 9\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.\nA. 28\nB. 32\nC. 38\nD. 42\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?\nA. red\nB. blue\nC. green\nD. yellow\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?\nA. 23\nB. 17\nC. 20\nD. 32\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?\nA. 8\nB. 12\nC. 25\nD. 5\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.\nA. K8\nB. B8\nC. B2\nD. K2\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?\nA. Dana\nB. Eli\nC. Noor\nD. Mira\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?\nA. triangle\nB. circle\nC. square\nD. hexagon\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "The meeting was moved from 11:30 to 13:00. Give the new time.\nA. 11:30\nB. 13:30\nC. 12:00\nD. 13:00\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which number is largest: 17, 23, 32, or 30?\nA. 17\nB. 23\nC. 32\nD. 30\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which option exactly matches the identifier PX-71?\nA. XP-71\nB. PX-71\nC. PX-17\nD. PX-11\nReply with one letter only.",
+          "expected": "B",
+          "answer": "B",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest.\nA. 3, 5, 8\nB. 3, 8, 5\nC. 5, 3, 8\nD. 8, 5, 3\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Which number is even?\nA. 13\nB. 15\nC. 17\nD. 14\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is the capital of France?\nA. Rome\nB. Berlin\nC. Paris\nD. Madrid\nReply with one letter only.",
+          "expected": "C",
+          "answer": "C",
+          "correct": true
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 0.3262704999997368,
+          "first_token_seconds": 0.015646399999241112,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1815.7416910081313
+        },
+        {
+          "seconds": 0.3259063999994396,
+          "first_token_seconds": 0.015187799999694107,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1781.8407189339944
+        },
+        {
+          "seconds": 0.32500849999996717,
+          "first_token_seconds": 0.013709099999687169,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2066.293585880327
+        },
+        {
+          "seconds": 0.35417339999912656,
+          "first_token_seconds": 0.04118249999919499,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1458.1124072110288
+        },
+        {
+          "seconds": 0.35743879999972705,
+          "first_token_seconds": 0.01859829999921203,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1515.3511661615496
+        },
+        {
+          "seconds": 0.35644260000117356,
+          "first_token_seconds": 0.01810529999966093,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1467.8409394182013
+        },
+        {
+          "seconds": 0.3565223000005062,
+          "first_token_seconds": 0.01793840000027558,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1458.6924811033018
+        },
+        {
+          "seconds": 0.3641162000003533,
+          "first_token_seconds": 0.01734020000003511,
+          "input_tokens": 25,
+          "output_tokens": 96,
+          "prompt_per_second": 1797.3973686102522
+        },
+        {
+          "seconds": 0.3848794000005,
+          "first_token_seconds": 0.024119300000165822,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1228.6324786324788
+        },
+        {
+          "seconds": 0.3840194000003976,
+          "first_token_seconds": 0.02390179999929387,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1277.2071736469586
+        },
+        {
+          "seconds": 0.3839205000003858,
+          "first_token_seconds": 0.02335020000100485,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1233.8393862990185
+        },
+        {
+          "seconds": 0.42153289999987464,
+          "first_token_seconds": 0.03676420000010694,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1493.8379185858337
+        },
+        {
+          "seconds": 0.4086124999994354,
+          "first_token_seconds": 0.023607400000400958,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1131.2798889288836
+        },
+        {
+          "seconds": 0.40831299999990733,
+          "first_token_seconds": 0.023270900001080008,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1241.2081092263136
+        },
+        {
+          "seconds": 0.41549490000033984,
+          "first_token_seconds": 0.04950410000128613,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 877.05918242831
+        },
+        {
+          "seconds": 0.3631234000004042,
+          "first_token_seconds": 0.023034499999994296,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1180.2134646962234
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 390.5,
+        "gpu_dedicated_mib": 285.66,
+        "gpu_shared_mib": 61.38
+      }
+    },
+    {
+      "round": 2,
+      "slots": 8,
+      "startup_seconds": 0.8318362999998499,
+      "observed_busy_slots": 8,
+      "wall_seconds": 1.2010951999982353,
+      "output_tokens": 1536,
+      "aggregate_tokens_per_second": 1278.8328518857263,
+      "first_workload_seconds": 1.1369226000006165,
+      "first_workload_busy_slots": 8,
+      "first_workload_tokens_per_second": 1351.015451710756,
+      "median_first_token_seconds": 0.03767174999939016,
+      "median_job_seconds": 0.5968423499998607,
+      "quality_seconds": 0.3834954000012658,
+      "correct": 6,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?\nA. 32\nB. 42\nC. 41\nD. 52\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?\nA. 63\nB. 56\nC. 67\nD. 72\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "What is 81 divided by 9?\nA. 8\nB. 10\nC. 11\nD. 9\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.\nA. 28\nB. 32\nC. 38\nD. 42\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?\nA. red\nB. blue\nC. green\nD. yellow\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?\nA. 23\nB. 17\nC. 20\nD. 32\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?\nA. 8\nB. 12\nC. 25\nD. 5\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.\nA. K8\nB. B8\nC. B2\nD. K2\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?\nA. Dana\nB. Eli\nC. Noor\nD. Mira\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?\nA. triangle\nB. circle\nC. square\nD. hexagon\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "The meeting was moved from 11:30 to 13:00. Give the new time.\nA. 11:30\nB. 13:30\nC. 12:00\nD. 13:00\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which number is largest: 17, 23, 32, or 30?\nA. 17\nB. 23\nC. 32\nD. 30\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which option exactly matches the identifier PX-71?\nA. XP-71\nB. PX-71\nC. PX-17\nD. PX-11\nReply with one letter only.",
+          "expected": "B",
+          "answer": "B",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest.\nA. 3, 5, 8\nB. 3, 8, 5\nC. 5, 3, 8\nD. 8, 5, 3\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Which number is even?\nA. 13\nB. 15\nC. 17\nD. 14\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is the capital of France?\nA. Rome\nB. Berlin\nC. Paris\nD. Madrid\nReply with one letter only.",
+          "expected": "C",
+          "answer": "C",
+          "correct": true
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 0.5750840000000608,
+          "first_token_seconds": 0.02445360000092478,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1064.8641140793557
+        },
+        {
+          "seconds": 0.5752600000014354,
+          "first_token_seconds": 0.02400810000108322,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1056.839590130037
+        },
+        {
+          "seconds": 0.5800505999995949,
+          "first_token_seconds": 0.04035479999947711,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 750.5159797360685
+        },
+        {
+          "seconds": 0.5801095000006171,
+          "first_token_seconds": 0.04040069999973639,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 684.6970215679562
+        },
+        {
+          "seconds": 0.5799669999996695,
+          "first_token_seconds": 0.03994299999976647,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 711.8098539242387
+        },
+        {
+          "seconds": 0.5798962000008032,
+          "first_token_seconds": 0.039649099999223836,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 677.2981959238963
+        },
+        {
+          "seconds": 0.5798185000003286,
+          "first_token_seconds": 0.03937779999978375,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 673.5449897437468
+        },
+        {
+          "seconds": 0.5861592999990535,
+          "first_token_seconds": 0.05274939999981143,
+          "input_tokens": 25,
+          "output_tokens": 96,
+          "prompt_per_second": 868.6889745995345
+        },
+        {
+          "seconds": 0.6084570000002714,
+          "first_token_seconds": 0.027589700001044548,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1107.5263639427938
+        },
+        {
+          "seconds": 0.6208397999998851,
+          "first_token_seconds": 0.058480300000155694,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 845.2192287374537
+        },
+        {
+          "seconds": 0.6090569000007235,
+          "first_token_seconds": 0.03581110000050103,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 852.3885409331801
+        },
+        {
+          "seconds": 0.609022399999958,
+          "first_token_seconds": 0.03596569999899657,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 874.4762251776278
+        },
+        {
+          "seconds": 0.6080020999997942,
+          "first_token_seconds": 0.03478410000025178,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 822.3991626481252
+        },
+        {
+          "seconds": 0.607525400000668,
+          "first_token_seconds": 0.034873399999924004,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 881.3160987074031
+        },
+        {
+          "seconds": 0.6078483999990567,
+          "first_token_seconds": 0.035189999998692656,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 832.7600564828559
+        },
+        {
+          "seconds": 0.6112042000004294,
+          "first_token_seconds": 0.056936200000563986,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 850.6860968302697
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 486.41,
+        "gpu_dedicated_mib": 381.7,
+        "gpu_shared_mib": 69.38
+      }
+    },
+    {
+      "round": 2,
+      "slots": 1,
+      "startup_seconds": 0.8199805000003835,
+      "observed_busy_slots": 1,
+      "wall_seconds": 3.730227100000775,
+      "output_tokens": 1536,
+      "aggregate_tokens_per_second": 411.77117607656675,
+      "first_workload_seconds": 3.3103433000014775,
+      "first_workload_busy_slots": 1,
+      "first_workload_tokens_per_second": 464.00021411655837,
+      "median_first_token_seconds": 0.012597499999174033,
+      "median_job_seconds": 0.23542400000042107,
+      "quality_seconds": 0.5613460000004125,
+      "correct": 6,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?\nA. 32\nB. 42\nC. 41\nD. 52\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?\nA. 63\nB. 56\nC. 67\nD. 72\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "What is 81 divided by 9?\nA. 8\nB. 10\nC. 11\nD. 9\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.\nA. 28\nB. 32\nC. 38\nD. 42\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?\nA. red\nB. blue\nC. green\nD. yellow\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?\nA. 23\nB. 17\nC. 20\nD. 32\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?\nA. 8\nB. 12\nC. 25\nD. 5\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.\nA. K8\nB. B8\nC. B2\nD. K2\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?\nA. Dana\nB. Eli\nC. Noor\nD. Mira\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?\nA. triangle\nB. circle\nC. square\nD. hexagon\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "The meeting was moved from 11:30 to 13:00. Give the new time.\nA. 11:30\nB. 13:30\nC. 12:00\nD. 13:00\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which number is largest: 17, 23, 32, or 30?\nA. 17\nB. 23\nC. 32\nD. 30\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which option exactly matches the identifier PX-71?\nA. XP-71\nB. PX-71\nC. PX-17\nD. PX-11\nReply with one letter only.",
+          "expected": "B",
+          "answer": "B",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest.\nA. 3, 5, 8\nB. 3, 8, 5\nC. 5, 3, 8\nD. 8, 5, 3\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Which number is even?\nA. 13\nB. 15\nC. 17\nD. 14\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is the capital of France?\nA. Rome\nB. Berlin\nC. Paris\nD. Madrid\nReply with one letter only.",
+          "expected": "C",
+          "answer": "C",
+          "correct": true
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 0.21339530000113882,
+          "first_token_seconds": 0.010633900001266738,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2908.8149740736053
+        },
+        {
+          "seconds": 0.21942610000041896,
+          "first_token_seconds": 0.010586700000203564,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2676.2857807772866
+        },
+        {
+          "seconds": 0.23434919999999693,
+          "first_token_seconds": 0.012955199999851175,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2229.0331568682086
+        },
+        {
+          "seconds": 0.2559084000004077,
+          "first_token_seconds": 0.02714420000120299,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2413.074476253153
+        },
+        {
+          "seconds": 0.24786390000008396,
+          "first_token_seconds": 0.03547380000054545,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2489.1774891774894
+        },
+        {
+          "seconds": 0.2587498000011692,
+          "first_token_seconds": 0.037234800000078394,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2426.6490183101696
+        },
+        {
+          "seconds": 0.23692539999865403,
+          "first_token_seconds": 0.010204599999269703,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2598.9367985823983
+        },
+        {
+          "seconds": 0.24766140000065207,
+          "first_token_seconds": 0.023611099999470753,
+          "input_tokens": 25,
+          "output_tokens": 96,
+          "prompt_per_second": 2818.807080843387
+        },
+        {
+          "seconds": 0.22150460000011662,
+          "first_token_seconds": 0.012239799998496892,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2294.7221390801155
+        },
+        {
+          "seconds": 0.24296119999962684,
+          "first_token_seconds": 0.022027999999409076,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2704.2253521126763
+        },
+        {
+          "seconds": 0.23286430000007385,
+          "first_token_seconds": 0.009983500000089407,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2876.4382191095547
+        },
+        {
+          "seconds": 0.24741939999876195,
+          "first_token_seconds": 0.026879299999563955,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2872.1876495931065
+        },
+        {
+          "seconds": 0.23649880000084522,
+          "first_token_seconds": 0.025739500000781845,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2450.707363261669
+        },
+        {
+          "seconds": 0.21015580000130285,
+          "first_token_seconds": 0.010126200000740937,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2991.3997257883584
+        },
+        {
+          "seconds": 0.2131409999983589,
+          "first_token_seconds": 0.010631899998770677,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2775.096525096525
+        },
+        {
+          "seconds": 0.21039190000010421,
+          "first_token_seconds": 0.01002870000047551,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2823.471642523938
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 413.02,
+        "gpu_dedicated_mib": 215.92,
+        "gpu_shared_mib": 61.38
+      }
+    },
+    {
+      "round": 3,
+      "slots": 4,
+      "startup_seconds": 0.7798908000004303,
+      "observed_busy_slots": 4,
+      "wall_seconds": 1.4099454999995942,
+      "output_tokens": 1536,
+      "aggregate_tokens_per_second": 1089.4038102894347,
+      "first_workload_seconds": 1.290455500000462,
+      "first_workload_busy_slots": 4,
+      "first_workload_tokens_per_second": 1190.2773865502918,
+      "median_first_token_seconds": 0.024548550000872638,
+      "median_job_seconds": 0.35372779999943305,
+      "quality_seconds": 0.36170210000091174,
+      "correct": 6,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?\nA. 32\nB. 42\nC. 41\nD. 52\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?\nA. 63\nB. 56\nC. 67\nD. 72\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "What is 81 divided by 9?\nA. 8\nB. 10\nC. 11\nD. 9\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.\nA. 28\nB. 32\nC. 38\nD. 42\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?\nA. red\nB. blue\nC. green\nD. yellow\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?\nA. 23\nB. 17\nC. 20\nD. 32\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?\nA. 8\nB. 12\nC. 25\nD. 5\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.\nA. K8\nB. B8\nC. B2\nD. K2\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?\nA. Dana\nB. Eli\nC. Noor\nD. Mira\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?\nA. triangle\nB. circle\nC. square\nD. hexagon\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "The meeting was moved from 11:30 to 13:00. Give the new time.\nA. 11:30\nB. 13:30\nC. 12:00\nD. 13:00\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which number is largest: 17, 23, 32, or 30?\nA. 17\nB. 23\nC. 32\nD. 30\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which option exactly matches the identifier PX-71?\nA. XP-71\nB. PX-71\nC. PX-17\nD. PX-11\nReply with one letter only.",
+          "expected": "B",
+          "answer": "B",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest.\nA. 3, 5, 8\nB. 3, 8, 5\nC. 5, 3, 8\nD. 8, 5, 3\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Which number is even?\nA. 13\nB. 15\nC. 17\nD. 14\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is the capital of France?\nA. Rome\nB. Berlin\nC. Paris\nD. Madrid\nReply with one letter only.",
+          "expected": "C",
+          "answer": "C",
+          "correct": true
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 0.31686310000077356,
+          "first_token_seconds": 0.01769609999973909,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1573.6179529282979
+        },
+        {
+          "seconds": 0.3208202000005258,
+          "first_token_seconds": 0.025364099999933387,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1182.5800812381096
+        },
+        {
+          "seconds": 0.31961670000055165,
+          "first_token_seconds": 0.024831500000800588,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1217.223715575392
+        },
+        {
+          "seconds": 0.3193877000012435,
+          "first_token_seconds": 0.024265600000944687,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1123.079279187299
+        },
+        {
+          "seconds": 0.334113900000375,
+          "first_token_seconds": 0.010906999999861,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 3275.420108231273
+        },
+        {
+          "seconds": 0.34116199999880337,
+          "first_token_seconds": 0.023771999998643878,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1296.481819789027
+        },
+        {
+          "seconds": 0.34115399999973306,
+          "first_token_seconds": 0.0237518000012642,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1289.4906511927788
+        },
+        {
+          "seconds": 0.34054850000029546,
+          "first_token_seconds": 0.02351239999916288,
+          "input_tokens": 25,
+          "output_tokens": 96,
+          "prompt_per_second": 1480.1657785671996
+        },
+        {
+          "seconds": 0.3662936000000627,
+          "first_token_seconds": 0.015605200000209152,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2117.278836417196
+        },
+        {
+          "seconds": 0.370106799999121,
+          "first_token_seconds": 0.025932799999281997,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1126.7605633802816
+        },
+        {
+          "seconds": 0.3693563999986509,
+          "first_token_seconds": 0.025463500000114436,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1092.5846753123367
+        },
+        {
+          "seconds": 0.3694065999989107,
+          "first_token_seconds": 0.025348599998324062,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1136.6865586814436
+        },
+        {
+          "seconds": 0.38440390000141633,
+          "first_token_seconds": 0.019505100000969833,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1678.4924086366063
+        },
+        {
+          "seconds": 0.37788300000102026,
+          "first_token_seconds": 0.028311899999607704,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1043.3421727600748
+        },
+        {
+          "seconds": 0.3777501000004122,
+          "first_token_seconds": 0.028659699999479926,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 980.5593451568894
+        },
+        {
+          "seconds": 0.3775511000003462,
+          "first_token_seconds": 0.028211799999553477,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 987.3363382700151
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 413.06,
+        "gpu_dedicated_mib": 288.55,
+        "gpu_shared_mib": 64.38
+      }
+    },
+    {
+      "round": 3,
+      "slots": 8,
+      "startup_seconds": 0.934382800000094,
+      "observed_busy_slots": 8,
+      "wall_seconds": 1.1657154000004084,
+      "output_tokens": 1536,
+      "aggregate_tokens_per_second": 1317.6457993087008,
+      "first_workload_seconds": 1.1339581000011094,
+      "first_workload_busy_slots": 8,
+      "first_workload_tokens_per_second": 1354.5474034697554,
+      "median_first_token_seconds": 0.041314950000014505,
+      "median_job_seconds": 0.5809607500004859,
+      "quality_seconds": 6.5695283000004565,
+      "correct": 6,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?\nA. 32\nB. 42\nC. 41\nD. 52\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?\nA. 63\nB. 56\nC. 67\nD. 72\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "What is 81 divided by 9?\nA. 8\nB. 10\nC. 11\nD. 9\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.\nA. 28\nB. 32\nC. 38\nD. 42\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?\nA. red\nB. blue\nC. green\nD. yellow\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?\nA. 23\nB. 17\nC. 20\nD. 32\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?\nA. 8\nB. 12\nC. 25\nD. 5\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.\nA. K8\nB. B8\nC. B2\nD. K2\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?\nA. Dana\nB. Eli\nC. Noor\nD. Mira\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?\nA. triangle\nB. circle\nC. square\nD. hexagon\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "The meeting was moved from 11:30 to 13:00. Give the new time.\nA. 11:30\nB. 13:30\nC. 12:00\nD. 13:00\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which number is largest: 17, 23, 32, or 30?\nA. 17\nB. 23\nC. 32\nD. 30\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which option exactly matches the identifier PX-71?\nA. XP-71\nB. PX-71\nC. PX-17\nD. PX-11\nReply with one letter only.",
+          "expected": "B",
+          "answer": "B",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest.\nA. 3, 5, 8\nB. 3, 8, 5\nC. 5, 3, 8\nD. 8, 5, 3\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Which number is even?\nA. 13\nB. 15\nC. 17\nD. 14\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is the capital of France?\nA. Rome\nB. Berlin\nC. Paris\nD. Madrid\nReply with one letter only.",
+          "expected": "C",
+          "answer": "C",
+          "correct": true
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 0.5698371999988012,
+          "first_token_seconds": 0.026832599998670048,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 995.6709956709956
+        },
+        {
+          "seconds": 0.5699722999997903,
+          "first_token_seconds": 0.026400300001114374,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 985.7706154637407
+        },
+        {
+          "seconds": 0.5775049000003492,
+          "first_token_seconds": 0.04917410000052769,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 602.9847746344406
+        },
+        {
+          "seconds": 0.577230500000951,
+          "first_token_seconds": 0.04876160000094387,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 551.3508094832339
+        },
+        {
+          "seconds": 0.5772838000011689,
+          "first_token_seconds": 0.0483752000000095,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 579.4472577028696
+        },
+        {
+          "seconds": 0.576611899999989,
+          "first_token_seconds": 0.04790409999986878,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 549.903766840803
+        },
+        {
+          "seconds": 0.5761590999991313,
+          "first_token_seconds": 0.047485600000072736,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 545.1346730430904
+        },
+        {
+          "seconds": 0.5743313000002672,
+          "first_token_seconds": 0.046772100000453065,
+          "input_tokens": 25,
+          "output_tokens": 96,
+          "prompt_per_second": 615.7483805817591
+        },
+        {
+          "seconds": 0.5853921999987506,
+          "first_token_seconds": 0.03164639999886276,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1001.088139281828
+        },
+        {
+          "seconds": 0.5844166000006226,
+          "first_token_seconds": 0.03087539999978617,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1056.477527842585
+        },
+        {
+          "seconds": 0.5870145999997476,
+          "first_token_seconds": 0.042600799999490846,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 657.5561781691349
+        },
+        {
+          "seconds": 0.5863254000014422,
+          "first_token_seconds": 0.041277300000729156,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 691.9417615684013
+        },
+        {
+          "seconds": 0.5858573999994405,
+          "first_token_seconds": 0.041245999998864136,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 635.9668140953371
+        },
+        {
+          "seconds": 0.5855473999999958,
+          "first_token_seconds": 0.041217299998606904,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 691.0054128757342
+        },
+        {
+          "seconds": 0.5852348000007623,
+          "first_token_seconds": 0.0404608000008011,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 659.7441340141128
+        },
+        {
+          "seconds": 0.5853900000001886,
+          "first_token_seconds": 0.041352599999299855,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 653.706230104593
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 604.29,
+        "gpu_dedicated_mib": 391.16,
+        "gpu_shared_mib": 71.38
+      }
+    },
+    {
+      "round": 3,
+      "slots": 1,
+      "startup_seconds": 0.9684750999986136,
+      "observed_busy_slots": 1,
+      "wall_seconds": 3.63786970000001,
+      "output_tokens": 1536,
+      "aggregate_tokens_per_second": 422.2251280742671,
+      "first_workload_seconds": 3.1732503000002907,
+      "first_workload_busy_slots": 1,
+      "first_workload_tokens_per_second": 484.04627898399923,
+      "median_first_token_seconds": 0.012663900000916328,
+      "median_job_seconds": 0.22214044999964244,
+      "quality_seconds": 0.5571036999990611,
+      "correct": 6,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?\nA. 32\nB. 42\nC. 41\nD. 52\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?\nA. 63\nB. 56\nC. 67\nD. 72\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "What is 81 divided by 9?\nA. 8\nB. 10\nC. 11\nD. 9\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.\nA. 28\nB. 32\nC. 38\nD. 42\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?\nA. red\nB. blue\nC. green\nD. yellow\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?\nA. 23\nB. 17\nC. 20\nD. 32\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?\nA. 8\nB. 12\nC. 25\nD. 5\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.\nA. K8\nB. B8\nC. B2\nD. K2\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?\nA. Dana\nB. Eli\nC. Noor\nD. Mira\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?\nA. triangle\nB. circle\nC. square\nD. hexagon\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "The meeting was moved from 11:30 to 13:00. Give the new time.\nA. 11:30\nB. 13:30\nC. 12:00\nD. 13:00\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which number is largest: 17, 23, 32, or 30?\nA. 17\nB. 23\nC. 32\nD. 30\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which option exactly matches the identifier PX-71?\nA. XP-71\nB. PX-71\nC. PX-17\nD. PX-11\nReply with one letter only.",
+          "expected": "B",
+          "answer": "B",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest.\nA. 3, 5, 8\nB. 3, 8, 5\nC. 5, 3, 8\nD. 8, 5, 3\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Which number is even?\nA. 13\nB. 15\nC. 17\nD. 14\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is the capital of France?\nA. Rome\nB. Berlin\nC. Paris\nD. Madrid\nReply with one letter only.",
+          "expected": "C",
+          "answer": "C",
+          "correct": true
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 0.21641289999934088,
+          "first_token_seconds": 0.012171399999715504,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2488.3695769771716
+        },
+        {
+          "seconds": 0.21825019999960205,
+          "first_token_seconds": 0.012580500000694883,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2225.2321981424147
+        },
+        {
+          "seconds": 0.22453310000128113,
+          "first_token_seconds": 0.010862000000997796,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2857.483033694488
+        },
+        {
+          "seconds": 0.21508259999973234,
+          "first_token_seconds": 0.012015399999654619,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2238.9578668837776
+        },
+        {
+          "seconds": 0.26752200000009907,
+          "first_token_seconds": 0.01398229999904288,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1957.9467097982463
+        },
+        {
+          "seconds": 0.21865030000117258,
+          "first_token_seconds": 0.012747300001137774,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2157.9205492888673
+        },
+        {
+          "seconds": 0.2363631999996869,
+          "first_token_seconds": 0.032630399999106885,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2363.8121843773506
+        },
+        {
+          "seconds": 0.2214364999999816,
+          "first_token_seconds": 0.009602399999494082,
+          "input_tokens": 25,
+          "output_tokens": 96,
+          "prompt_per_second": 3338.229403124583
+        },
+        {
+          "seconds": 0.23817439999947965,
+          "first_token_seconds": 0.028410699998858036,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2603.282399547255
+        },
+        {
+          "seconds": 0.22284439999930328,
+          "first_token_seconds": 0.021195999999690684,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 3004.8829347689993
+        },
+        {
+          "seconds": 0.23834859999988112,
+          "first_token_seconds": 0.03198540000084904,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2640.0367309458215
+        },
+        {
+          "seconds": 0.2162238000000798,
+          "first_token_seconds": 0.010873999999603257,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2902.055622732769
+        },
+        {
+          "seconds": 0.22007420000045386,
+          "first_token_seconds": 0.01136180000139575,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 2548.6561631139944
+        },
+        {
+          "seconds": 0.21559479999996256,
+          "first_token_seconds": 0.011797900000601658,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 2560.5462498666384
+        },
+        {
+          "seconds": 0.22964279999905557,
+          "first_token_seconds": 0.02746830000069167,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2864.6157678415743
+        },
+        {
+          "seconds": 0.23755220000020927,
+          "first_token_seconds": 0.032637399999657646,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 2588.6325267304446
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 412.59,
+        "gpu_dedicated_mib": 215.92,
+        "gpu_shared_mib": 61.38
+      }
+    },
+    {
+      "round": 3,
+      "slots": 2,
+      "startup_seconds": 0.934524500000407,
+      "observed_busy_slots": 2,
+      "wall_seconds": 2.145645599999625,
+      "output_tokens": 1536,
+      "aggregate_tokens_per_second": 715.8684546973966,
+      "first_workload_seconds": 2.1426353999995627,
+      "first_workload_busy_slots": 2,
+      "first_workload_tokens_per_second": 716.8741821405142,
+      "median_first_token_seconds": 0.017097699999794713,
+      "median_job_seconds": 0.26524370000061026,
+      "quality_seconds": 0.3329873000002408,
+      "correct": 6,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?\nA. 32\nB. 42\nC. 41\nD. 52\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?\nA. 63\nB. 56\nC. 67\nD. 72\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "What is 81 divided by 9?\nA. 8\nB. 10\nC. 11\nD. 9\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.\nA. 28\nB. 32\nC. 38\nD. 42\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?\nA. red\nB. blue\nC. green\nD. yellow\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?\nA. 23\nB. 17\nC. 20\nD. 32\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?\nA. 8\nB. 12\nC. 25\nD. 5\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.\nA. K8\nB. B8\nC. B2\nD. K2\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?\nA. Dana\nB. Eli\nC. Noor\nD. Mira\nReply with one letter only.",
+          "expected": "B",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?\nA. triangle\nB. circle\nC. square\nD. hexagon\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "The meeting was moved from 11:30 to 13:00. Give the new time.\nA. 11:30\nB. 13:30\nC. 12:00\nD. 13:00\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which number is largest: 17, 23, 32, or 30?\nA. 17\nB. 23\nC. 32\nD. 30\nReply with one letter only.",
+          "expected": "C",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "Which option exactly matches the identifier PX-71?\nA. XP-71\nB. PX-71\nC. PX-17\nD. PX-11\nReply with one letter only.",
+          "expected": "B",
+          "answer": "B",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest.\nA. 3, 5, 8\nB. 3, 8, 5\nC. 5, 3, 8\nD. 8, 5, 3\nReply with one letter only.",
+          "expected": "A",
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "prompt": "Which number is even?\nA. 13\nB. 15\nC. 17\nD. 14\nReply with one letter only.",
+          "expected": "D",
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "prompt": "What is the capital of France?\nA. Rome\nB. Berlin\nC. Paris\nD. Madrid\nReply with one letter only.",
+          "expected": "C",
+          "answer": "C",
+          "correct": true
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 0.24336899999980233,
+          "first_token_seconds": 0.009179000000585802,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 3197.1087016958577
+        },
+        {
+          "seconds": 0.2622183999992558,
+          "first_token_seconds": 0.025969500000428525,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1836.9139845060297
+        },
+        {
+          "seconds": 0.2580593000002409,
+          "first_token_seconds": 0.015680299999075942,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1887.237556027365
+        },
+        {
+          "seconds": 0.27083219999985886,
+          "first_token_seconds": 0.027548699999897508,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1619.4331983805669
+        },
+        {
+          "seconds": 0.2535290999985591,
+          "first_token_seconds": 0.014745200000106706,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1913.795972707605
+        },
+        {
+          "seconds": 0.2813354000008985,
+          "first_token_seconds": 0.03718290000142588,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1607.364652590049
+        },
+        {
+          "seconds": 0.2658028000005288,
+          "first_token_seconds": 0.01538309999887133,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1813.3860863831192
+        },
+        {
+          "seconds": 0.2646846000006917,
+          "first_token_seconds": 0.017082599999412196,
+          "input_tokens": 25,
+          "output_tokens": 96,
+          "prompt_per_second": 1770.1621468526519
+        },
+        {
+          "seconds": 0.2675104999998439,
+          "first_token_seconds": 0.015057099999467027,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1932.7731092436975
+        },
+        {
+          "seconds": 0.2607979999993404,
+          "first_token_seconds": 0.01711280000017723,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1690.8552909680147
+        },
+        {
+          "seconds": 0.28315309999925375,
+          "first_token_seconds": 0.04114319999825966,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1851.4046526603881
+        },
+        {
+          "seconds": 0.2844399000005069,
+          "first_token_seconds": 0.03928770000129589,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1579.3629902605949
+        },
+        {
+          "seconds": 0.26798390000112704,
+          "first_token_seconds": 0.01648370000111754,
+          "input_tokens": 22,
+          "output_tokens": 96,
+          "prompt_per_second": 1630.837657524092
+        },
+        {
+          "seconds": 0.2639184999989084,
+          "first_token_seconds": 0.017934800000148243,
+          "input_tokens": 24,
+          "output_tokens": 96,
+          "prompt_per_second": 1666.6666666666665
+        },
+        {
+          "seconds": 0.28989759999967646,
+          "first_token_seconds": 0.03532180000001972,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1666.6666666666667
+        },
+        {
+          "seconds": 0.25647700000081386,
+          "first_token_seconds": 0.016243899999608402,
+          "input_tokens": 23,
+          "output_tokens": 96,
+          "prompt_per_second": 1743.216613612248
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 417.5,
+        "gpu_dedicated_mib": 240.53,
+        "gpu_shared_mib": 63.38
+      }
+    }
+  ]
+}

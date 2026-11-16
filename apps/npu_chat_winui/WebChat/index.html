@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#101d2d">
+  <title>Phoenix AI</title>
+  <link rel="icon" href="/phoenix.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/phoenix-192.png">
+  <link rel="manifest" href="/phoenix.webmanifest">
+  <link rel="stylesheet" href="/phoenix.css">
+  <script src="/phoenix.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-new" viewBox="0 0 24 24"><path d="M12 5H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6M17 3v8m-4-4h8"/></symbol>
+    <symbol id="icon-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 1 2.6 6.4M3 6v6h6m3-5v5l3 2"/></symbol>
+    <symbol id="icon-edit" viewBox="0 0 24 24"><path d="m15 5 4 4M4 20l4-.8 12-12a2.8 2.8 0 0 0-4-4l-12 12L4 20Z"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></symbol>
+    <symbol id="icon-connect" viewBox="0 0 24 24"><path d="M14 4h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-5m-3-12 4 4-4 4m4-4H4"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3c3 2 5 2.8 8 3v5c0 4.5-3 8-8 10-5-2-8-5.5-8-10V6c3-.2 5-1 8-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="icon-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11v1a7 7 0 0 0 14 0v-1m-7 8v3"/></symbol>
+    <symbol id="icon-attach" viewBox="0 0 24 24"><path d="m20 11-8.5 8.5a4.2 4.2 0 0 1-6-6L15 4a2.8 2.8 0 0 1 4 4l-9.5 9.5a1.4 1.4 0 0 1-2-2l8-8"/></symbol>
+    <symbol id="icon-speaker" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4V9Zm12-.5a5 5 0 0 1 0 7m2.5-9.5a8.5 8.5 0 0 1 0 12"/></symbol>
+    <symbol id="icon-voice" viewBox="0 0 24 24"><path d="M4 10v4m4-7v10m4-14v18m4-14v10m4-7v4"/></symbol>
+    <symbol id="icon-send" viewBox="0 0 24 24"><path d="m4 4 16 8-16 8 3-8-3-8Zm3 8h13"/></symbol>
+    <symbol id="icon-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="icon-open" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="icon-like" viewBox="0 0 24 24"><path d="M8 10v10H4V10zm0 8 3 2h6a2 2 0 0 0 2-1.6l1.5-6a2 2 0 0 0-2-2.4H15V6a2 2 0 0 0-2-2l-5 6"/></symbol>
+    <symbol id="icon-dislike" viewBox="0 0 24 24"><path d="M8 14V4H4v10zm0-8 3-2h6a2 2 0 0 1 2 1.6l1.5 6a2 2 0 0 1-2 2.4H15v4a2 2 0 0 1-2 2l-5-6"/></symbol>
+    <symbol id="icon-branch" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M6 7v10m12-10a6 6 0 0 1-6 6 6 6 0 0 0-6 4"/></symbol>
+  </svg>
+  <main class="shell">
+    <header>
+      <img src="/phoenix.svg" alt="" width="36" height="36">
+      <div class="heading">
+        <h1>Phoenix AI</h1>
+        <div id="session" class="session" hidden>
+          <div class="session-name">
+            <span id="sessionTitle"></span>
+            <button type="button" class="icon-button compact-icon" id="renameDevice" aria-label="Rename this device" title="Rename this device">
+              <svg aria-hidden="true"><use href="#icon-edit"/></svg>
+            </button>
+          </div>
+          <span id="sessionType"></span>
+        </div>
+        <span class="status" id="connection" role="status">Connecting…</span>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="icon-button" id="newChat" aria-label="New chat" title="New chat" hidden>
+          <svg aria-hidden="true"><use href="#icon-new"/></svg>
+        </button>
+        <button type="button" class="icon-button" id="chatHistory" aria-label="Chat history" title="Chat history" aria-haspopup="dialog" hidden>
+          <svg aria-hidden="true"><use href="#icon-history"/></svg>
+        </button>
+        <button type="button" class="icon-button" id="install" aria-label="Install Phoenix AI" title="Install Phoenix AI" aria-haspopup="dialog" hidden>
+          <svg aria-hidden="true"><use href="#icon-download"/></svg>
+        </button>
+      </div>
+    </header>
+    <section id="locked" class="locked" hidden>
+      <h2>Connect to your PC</h2>
+      <p id="accessHint">Scan the QR code or paste the access link from Share Phoenix once to pair this device.</p>
+      <form id="pair">
+        <label class="sr-only" for="accessLink">Phoenix access link</label>
+        <input type="password" id="accessLink" placeholder="Paste the access link" autocomplete="off"
+          autocapitalize="none" spellcheck="false" maxlength="512" required>
+        <button type="submit" class="icon-button" aria-label="Connect" title="Connect">
+          <svg aria-hidden="true"><use href="#icon-connect"/></svg>
+        </button>
+      </form>
+      <button type="button" class="icon-button" id="certSetup" aria-label="Certificate setup" title="Certificate setup" aria-haspopup="dialog">
+        <svg aria-hidden="true"><use href="#icon-shield"/></svg>
+      </button>
+    </section>
+    <section id="chat" class="chat" aria-label="This device’s private chat" hidden>
+      <div id="transcript" class="transcript" tabindex="0" aria-label="Conversation">
+        <p id="welcome">Ask Phoenix a question.</p>
+      </div>
+      <form id="composer" class="composer">
+        <div id="draftAttachments" class="draft-attachments" aria-label="Draft attachments" hidden></div>
+        <label class="sr-only" for="prompt">Message Phoenix</label>
+        <textarea id="prompt" placeholder="Message Phoenix…" rows="2" maxlength="32000"></textarea>
+        <input type="file" id="attachmentInput" multiple hidden>
+        <div class="actions">
+          <button type="button" class="icon-button" id="attach" aria-label="Attach files" title="Attach files">
+            <svg aria-hidden="true"><use href="#icon-attach"/></svg>
+          </button>
+          <button type="button" class="icon-button" id="mic" aria-label="Dictate" title="Dictate" hidden>
+            <svg aria-hidden="true"><use href="#icon-mic"/></svg>
+          </button>
+          <button type="button" class="icon-button" id="voice" aria-label="Voice mode" title="Voice mode" aria-pressed="false">
+            <svg aria-hidden="true"><use href="#icon-voice"/></svg>
+          </button>
+          <button type="submit" class="icon-button" id="send" aria-label="Send" title="Send" disabled>
+            <svg aria-hidden="true"><use href="#icon-send"/></svg>
+          </button>
+        </div>
+        <div id="notice" class="notice" role="status" hidden></div>
+      </form>
+    </section>
+  </main>
+  <dialog id="historyDialog" aria-labelledby="historyTitle">
+    <div class="dialog-header">
+      <h2 id="historyTitle">Chat history</h2>
+      <button type="button" class="icon-button" id="closeHistory" aria-label="Close chat history" title="Close chat history">
+        <svg aria-hidden="true"><use href="#icon-close"/></svg>
+      </button>
+    </div>
+    <ul id="savedChats"></ul>
+    <template id="savedChatRow">
+      <li><span></span><button type="button" class="icon-button"><svg aria-hidden="true"><use href="#icon-open"/></svg></button></li>
+    </template>
+  </dialog>
+  <dialog id="setup" aria-labelledby="setupTitle">
+    <div class="dialog-header">
+      <h2 id="setupTitle">Install Phoenix AI</h2>
+      <button type="button" class="icon-button" id="closeSetup" aria-label="Close setup" title="Close setup">
+        <svg aria-hidden="true"><use href="#icon-close"/></svg>
+      </button>
+    </div>
+    <div id="installSteps">
+      <p id="installHint"></p>
+      <button type="button" class="icon-button" id="installApp" aria-label="Install app" title="Install app" hidden>
+        <svg aria-hidden="true"><use href="#icon-download"/></svg>
+      </button>
+    </div>
+    <details id="certificate">
+      <summary>Certificate setup</summary>
+      <p>For first-time HTTPS setup, get the public certificate from <strong>Share Phoenix → Show trust certificate</strong> on your PC.</p>
+      <p>If you download it here, compare its SHA-256 fingerprint with the one shown on your PC before approving trust.</p>
+      <p id="certificateHint"></p>
+      <a class="icon-button" href="/phoenix-lan.cer" aria-label="Download Phoenix LAN certificate" title="Download Phoenix LAN certificate" download>
+        <svg aria-hidden="true"><use href="#icon-download"/></svg>
+      </a>
+    </details>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../apps/npu_chat_winui/CloudResearch.cs" />
+    <Compile Include="../../apps/npu_chat_winui/ConversationPolicy.cs" />
+    <Compile Include="../../apps/npu_chat_winui/WeatherForecast.cs" />
+    <Compile Include="../../apps/npu_chat_winui/WorkspaceRequest.cs" />
+    <Compile Include="../../apps/npu_chat_winui/LocalWorkspace.cs" />
+    <Compile Include="../../apps/npu_chat_winui/LanProfiles.cs" />
+    <Compile Include="../../apps/npu_chat_winui/McpClient.cs" />
+    <Compile Include="../../apps/npu_chat_winui/RepositoryImport.cs" />
+    <Compile Include="../../apps/npu_chat_winui/RepositoryInstallation.cs" />
+    <Compile Include="../../apps/npu_chat_winui/ToolAuthoring.cs" />
+    <Compile Include="../../apps/npu_chat_winui/NativeToolLoop.cs" />
+    <Compile Include="../../apps/npu_chat_winui/ReplyPresentation.cs" />
+    <Compile Include="../../apps/npu_chat_winui/ChatHistory.cs" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="8.0.0" />
+  </ItemGroup>
+</Project>

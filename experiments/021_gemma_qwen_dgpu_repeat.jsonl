@@ -1,0 +1,4 @@
+{"kind": "status", "text": "Loading dGPU \u00b7 1,024 context tokens", "progress": null}
+{"model": "Qwen", "load_s": 1.87, "first_s": 0.07, "generation_tps": 110.53343835669638, "tokens": 112, "followup": true, "tools": [{"called": true, "answered": true}, {"called": true, "answered": true}, {"called": true, "answered": true}]}
+{"kind": "status", "text": "Loading dGPU \u00b7 1,024 context tokens", "progress": null}
+{"model": "Gemma", "load_s": 2.29, "first_s": 0.064, "generation_tps": 94.18488918002298, "tokens": 112, "followup": true, "tools": [{"called": true, "answered": true}, {"called": true, "answered": true}, {"called": true, "answered": true}]}

@@ -1,0 +1,484 @@
+{
+  "started_utc": "2026-11-10T17:44:06.883855+00:00",
+  "model": "LFM2.5-230M-Q4_K_M.gguf",
+  "model_bytes": 153406304,
+  "runtime": "version: 0.9.0-dev (build 12189, commit 80d2c0c2c)\nbuilt with Clang 20.1.8 for Windows x86_64",
+  "device": {
+    "Id": "Vulkan1",
+    "Name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "Integrated": false,
+    "FreeMiB": 5152
+  },
+  "nvidia_driver": "NVIDIA GeForce RTX 4050 Laptop GPU, 621.14, 6141 MiB",
+  "context_per_slot": 2048,
+  "requested_slots": [
+    2,
+    8
+  ],
+  "repeats": 1,
+  "fixed_jobs": 16,
+  "fixed_tokens_per_job": 24,
+  "quality_jobs": 16,
+  "runs": [
+    {
+      "round": 1,
+      "slots": 2,
+      "startup_seconds": 1.5644128000003548,
+      "observed_busy_slots": 2,
+      "wall_seconds": 1.3457741000001988,
+      "output_tokens": 384,
+      "aggregate_tokens_per_second": 285.33763578890637,
+      "median_first_token_seconds": 0.018159449999984645,
+      "median_job_seconds": 0.08469799999966199,
+      "quality_seconds": 1.0398907999988296,
+      "correct": 3,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?",
+          "expected": "42",
+          "answer": "To find 19 plus 23, we can simply add them together:\n\n19 + 23 = 42\n\n",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?",
+          "expected": "63",
+          "answer": "9 times 7 equals 63.\n\n\\boxed{63}",
+          "correct": false
+        },
+        {
+          "prompt": "What is 81 divided by 9?",
+          "expected": "9",
+          "answer": "81 divided by 9 equals 9.\n\n\\boxed{9}",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.",
+          "expected": "38",
+          "answer": "Subtract 27 from 65:\n\n\\[\n65 - 27 = 38\n\\]\n\nThe final",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?",
+          "expected": "blue",
+          "answer": "The second color is blue.\n\n**Explanation:**  \nThe lockers contain red, blue, and green bags",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?",
+          "expected": "23",
+          "answer": "Sam belongs to desk 23.",
+          "correct": false
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?",
+          "expected": "5",
+          "answer": "There are \\(\\boxed{5}\\) bowls in inventory.",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.",
+          "expected": "b2",
+          "answer": "B2",
+          "correct": true
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?",
+          "expected": "eli",
+          "answer": "Noor arrived before Eli. Therefore, Dana arrived last.\n\n\\boxed{Dana}",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?",
+          "expected": "triangle",
+          "answer": "The shape inside is a **triangle**.\n\n\\boxed{\\text{Triangle}}",
+          "correct": false
+        },
+        {
+          "prompt": "The scheduled time is 11:30, but the meeting was moved to 13:00. Give the new time.",
+          "expected": "13:00",
+          "answer": "The new time is 13:00.",
+          "correct": false
+        },
+        {
+          "prompt": "Which is larger, 23 or 32?",
+          "expected": "32",
+          "answer": "To determine which is larger, compare the numbers:\n\n- **23** is smaller than **32**.\n\nThus",
+          "correct": false
+        },
+        {
+          "prompt": "Repeat the exact identifier PX-71.",
+          "expected": "px-71",
+          "answer": "PX-71",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest. Use commas and no spaces.",
+          "expected": "3,5,8",
+          "answer": "5",
+          "correct": false
+        },
+        {
+          "prompt": "Is 14 an even number? Answer yes or no.",
+          "expected": "yes",
+          "answer": "Yes.",
+          "correct": true
+        },
+        {
+          "prompt": "Is Rome the capital of France? Answer yes or no.",
+          "expected": "no",
+          "answer": "Yes.",
+          "correct": false
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 0.07606229999873904,
+          "first_token_seconds": 0.014044199999261764,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 1954.4527532290958
+        },
+        {
+          "seconds": 0.07599430000118446,
+          "first_token_seconds": 0.013831199999913224,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 1936.842105263158
+        },
+        {
+          "seconds": 0.7398004999995464,
+          "first_token_seconds": 0.01506379999955243,
+          "input_tokens": 24,
+          "output_tokens": 24,
+          "prompt_per_second": 1812.1413470250677
+        },
+        {
+          "seconds": 0.7426667999989149,
+          "first_token_seconds": 0.68050729999959,
+          "input_tokens": 22,
+          "output_tokens": 24,
+          "prompt_per_second": 32.644630551812966
+        },
+        {
+          "seconds": 0.09683240000049409,
+          "first_token_seconds": 0.030308200000945362,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 1585.9881395669563
+        },
+        {
+          "seconds": 0.08448949999910838,
+          "first_token_seconds": 0.012721299999611801,
+          "input_tokens": 22,
+          "output_tokens": 24,
+          "prompt_per_second": 1992.392682485057
+        },
+        {
+          "seconds": 0.0849065000002156,
+          "first_token_seconds": 0.013685300000361167,
+          "input_tokens": 22,
+          "output_tokens": 24,
+          "prompt_per_second": 2166.633838881229
+        },
+        {
+          "seconds": 0.08603410000068834,
+          "first_token_seconds": 0.01930019999963406,
+          "input_tokens": 25,
+          "output_tokens": 24,
+          "prompt_per_second": 1689.5316618233426
+        },
+        {
+          "seconds": 0.08406759999888891,
+          "first_token_seconds": 0.014278200000262586,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 2164.094843808807
+        },
+        {
+          "seconds": 0.1011488999993162,
+          "first_token_seconds": 0.030182399999830523,
+          "input_tokens": 24,
+          "output_tokens": 24,
+          "prompt_per_second": 1561.8898867629832
+        },
+        {
+          "seconds": 0.08294009999917762,
+          "first_token_seconds": 0.016252199999144068,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 1774.1437827830916
+        },
+        {
+          "seconds": 0.07358059999933175,
+          "first_token_seconds": 0.01701870000033523,
+          "input_tokens": 24,
+          "output_tokens": 24,
+          "prompt_per_second": 1783.59096313912
+        },
+        {
+          "seconds": 0.08313210000051185,
+          "first_token_seconds": 0.021846900001037284,
+          "input_tokens": 22,
+          "output_tokens": 24,
+          "prompt_per_second": 2399.38924637365
+        },
+        {
+          "seconds": 0.09368670000003476,
+          "first_token_seconds": 0.03814770000099088,
+          "input_tokens": 24,
+          "output_tokens": 24,
+          "prompt_per_second": 1724.7574559827524
+        },
+        {
+          "seconds": 0.10222489999978279,
+          "first_token_seconds": 0.03299879999940458,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 2356.5573770491806
+        },
+        {
+          "seconds": 0.07809160000033444,
+          "first_token_seconds": 0.020856400000411668,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 1393.6859964854875
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 428.93,
+        "gpu_dedicated_mib": 231.99,
+        "gpu_shared_mib": 60.38
+      }
+    },
+    {
+      "round": 1,
+      "slots": 8,
+      "startup_seconds": 0.9059242000002996,
+      "observed_busy_slots": 8,
+      "wall_seconds": 8.969813099998646,
+      "output_tokens": 384,
+      "aggregate_tokens_per_second": 42.81025654816129,
+      "median_first_token_seconds": 4.229783300000236,
+      "median_job_seconds": 4.481696899999406,
+      "quality_seconds": 1.2531880999995337,
+      "correct": 3,
+      "checks": [
+        {
+          "prompt": "What is 19 plus 23?",
+          "expected": "42",
+          "answer": "To find 19 plus 23, we can simply add them together:\n\n19 + 23 = 42\n\n",
+          "correct": false
+        },
+        {
+          "prompt": "What is 9 times 7?",
+          "expected": "63",
+          "answer": "9 times 7 equals 63.\n\n\\boxed{63}",
+          "correct": false
+        },
+        {
+          "prompt": "What is 81 divided by 9?",
+          "expected": "9",
+          "answer": "81 divided by 9 equals 9.\n\n\\boxed{9}",
+          "correct": false
+        },
+        {
+          "prompt": "Subtract 27 from 65.",
+          "expected": "38",
+          "answer": "Subtract 27 from 65:\n\n\\[\n65 - 27 = 38\n\\]\n\nThe final",
+          "correct": false
+        },
+        {
+          "prompt": "The lockers contain red, blue, and green bags in that order. What is the second color?",
+          "expected": "blue",
+          "answer": "The second color is blue.\n\n**Explanation:**  \nThe lockers contain red, blue, and green bags",
+          "correct": false
+        },
+        {
+          "prompt": "Mira is assigned desk 17 and Sam is assigned desk 23. Which desk number belongs to Sam?",
+          "expected": "23",
+          "answer": "Sam belongs to desk 23.",
+          "correct": false
+        },
+        {
+          "prompt": "Inventory: spoons 12, plates 8, bowls 5. How many bowls are in inventory?",
+          "expected": "5",
+          "answer": "There are \\(\\boxed{5}\\) bowls in inventory.",
+          "correct": false
+        },
+        {
+          "prompt": "The code for the south gate is K8. The code for the west gate is B2. Give the west gate code.",
+          "expected": "b2",
+          "answer": "B2",
+          "correct": true
+        },
+        {
+          "prompt": "Dana arrived before Noor. Noor arrived before Eli. Who arrived last?",
+          "expected": "eli",
+          "answer": "Noor arrived before Eli. Therefore, Dana arrived last.\n\n\\boxed{Dana}",
+          "correct": false
+        },
+        {
+          "prompt": "The triangle is inside the box. The circle is outside the box. Which shape is inside?",
+          "expected": "triangle",
+          "answer": "The shape inside is a **triangle**.\n\n\\boxed{\\text{Triangle}}",
+          "correct": false
+        },
+        {
+          "prompt": "The scheduled time is 11:30, but the meeting was moved to 13:00. Give the new time.",
+          "expected": "13:00",
+          "answer": "The new time is 13:00.",
+          "correct": false
+        },
+        {
+          "prompt": "Which is larger, 23 or 32?",
+          "expected": "32",
+          "answer": "To determine which is larger, compare the numbers:\n\n- **23** is smaller than **32**.\n\nThus",
+          "correct": false
+        },
+        {
+          "prompt": "Repeat the exact identifier PX-71.",
+          "expected": "px-71",
+          "answer": "PX-71",
+          "correct": true
+        },
+        {
+          "prompt": "Sort 8, 3, 5 from smallest to largest. Use commas and no spaces.",
+          "expected": "3,5,8",
+          "answer": "5",
+          "correct": false
+        },
+        {
+          "prompt": "Is 14 an even number? Answer yes or no.",
+          "expected": "yes",
+          "answer": "Yes.",
+          "correct": true
+        },
+        {
+          "prompt": "Is Rome the capital of France? Answer yes or no.",
+          "expected": "no",
+          "answer": "Yes.",
+          "correct": false
+        }
+      ],
+      "fixed_jobs": [
+        {
+          "seconds": 8.784203600000183,
+          "first_token_seconds": 8.41559849999976,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 2.7341671512878882
+        },
+        {
+          "seconds": 8.78424460000133,
+          "first_token_seconds": 8.415144200000213,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 2.734093046654564
+        },
+        {
+          "seconds": 8.79022459999942,
+          "first_token_seconds": 8.499243299998852,
+          "input_tokens": 24,
+          "output_tokens": 24,
+          "prompt_per_second": 2.83150192182294
+        },
+        {
+          "seconds": 8.790267500000482,
+          "first_token_seconds": 8.499908399999185,
+          "input_tokens": 22,
+          "output_tokens": 24,
+          "prompt_per_second": 2.5954139036322816
+        },
+        {
+          "seconds": 8.791019599999345,
+          "first_token_seconds": 8.499820799999725,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 2.7131740881021886
+        },
+        {
+          "seconds": 8.790385500000411,
+          "first_token_seconds": 8.499723099999756,
+          "input_tokens": 22,
+          "output_tokens": 24,
+          "prompt_per_second": 2.5951300968207653
+        },
+        {
+          "seconds": 8.789677499999016,
+          "first_token_seconds": 8.499831999999515,
+          "input_tokens": 22,
+          "output_tokens": 24,
+          "prompt_per_second": 2.5949455179393297
+        },
+        {
+          "seconds": 8.78975939999873,
+          "first_token_seconds": 8.49904830000014,
+          "input_tokens": 25,
+          "output_tokens": 24,
+          "prompt_per_second": 2.948915465563568
+        },
+        {
+          "seconds": 0.1791901999986294,
+          "first_token_seconds": 0.03542860000015935,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 815.3715258082813
+        },
+        {
+          "seconds": 0.1784693999998126,
+          "first_token_seconds": 0.03471950000130164,
+          "input_tokens": 24,
+          "output_tokens": 24,
+          "prompt_per_second": 857.8475176037459
+        },
+        {
+          "seconds": 0.17805560000124387,
+          "first_token_seconds": 0.044379299999491195,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 646.1037136917804
+        },
+        {
+          "seconds": 0.17785969999931694,
+          "first_token_seconds": 0.04384840000057011,
+          "input_tokens": 24,
+          "output_tokens": 24,
+          "prompt_per_second": 675.2384435753876
+        },
+        {
+          "seconds": 0.17731970000022557,
+          "first_token_seconds": 0.04412820000106876,
+          "input_tokens": 22,
+          "output_tokens": 24,
+          "prompt_per_second": 608.5417127683115
+        },
+        {
+          "seconds": 0.1772328999995807,
+          "first_token_seconds": 0.0436424999988958,
+          "input_tokens": 24,
+          "output_tokens": 24,
+          "prompt_per_second": 668.8776789944538
+        },
+        {
+          "seconds": 0.17709760000070673,
+          "first_token_seconds": 0.04442240000025777,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 624.8981144378635
+        },
+        {
+          "seconds": 0.17693700000017998,
+          "first_token_seconds": 0.044021499999871594,
+          "input_tokens": 23,
+          "output_tokens": 24,
+          "prompt_per_second": 630.6207501645098
+        }
+      ],
+      "peak_memory": {
+        "working_set_mib": 487.41,
+        "gpu_dedicated_mib": 385.02,
+        "gpu_shared_mib": 67.38
+      }
+    }
+  ]
+}

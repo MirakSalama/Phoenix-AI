@@ -1,0 +1,12 @@
+{"kind": "status", "text": "Loading CPU \u00b7 1,024 context tokens", "progress": null}
+{"device": "CPU", "model": "Gemma", "load_s": 1.6, "first_s": 0.129, "generation_tps": 30.290634545131546, "tokens": 112}
+{"kind": "status", "text": "Loading CPU \u00b7 1,024 context tokens", "progress": null}
+{"device": "CPU", "model": "Qwen", "load_s": 1.39, "first_s": 0.23, "generation_tps": 34.27440770118151, "tokens": 112}
+{"kind": "status", "text": "Loading iGPU \u00b7 1,024 context tokens", "progress": null}
+{"device": "iGPU", "model": "Gemma", "load_s": 2.51, "first_s": 0.199, "generation_tps": 37.19367988907571, "tokens": 112}
+{"kind": "status", "text": "Loading iGPU \u00b7 1,024 context tokens", "progress": null}
+{"device": "iGPU", "model": "Qwen", "load_s": 3.13, "first_s": 0.857, "generation_tps": 45.78648811861258, "tokens": 112}
+{"kind": "status", "text": "Loading dGPU \u00b7 1,024 context tokens", "progress": null}
+{"device": "dGPU", "model": "Gemma", "load_s": 9.69, "first_s": 4.086, "generation_tps": 83.00163834765422, "tokens": 112, "followup": true, "tools": [{"called": true, "answered": true}, {"called": true, "answered": true}, {"called": true, "answered": true}]}
+{"kind": "status", "text": "Loading dGPU \u00b7 1,024 context tokens", "progress": null}
+{"device": "dGPU", "model": "Qwen", "load_s": 4.0, "first_s": 2.062, "generation_tps": 75.11765048230946, "tokens": 112, "followup": true, "tools": [{"called": true, "answered": true}, {"called": true, "answered": true}, {"called": false, "answered": false, "received": {"name": "find_note", "arguments": "{\"topic\":\"coffee\"}"}}]}

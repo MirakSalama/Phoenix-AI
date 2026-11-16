@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>PhoenixAI</AssemblyName>
+    <AssemblyTitle>Phoenix AI</AssemblyTitle>
+    <Product>Phoenix Local AI</Product>
+    <Description>NPU Chat, local voice and text for Windows</Description>
+    <RootNamespace>NpuChat</RootNamespace>
+    <ApplicationIcon>Assets\Phoenix.ico</ApplicationIcon>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework Condition="'$(PhoenixPortable)' == 'true'">net10.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PlatformTarget>x64</PlatformTarget>
+    <WindowsPackageType>None</WindowsPackageType>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <UseWinUI>true</UseWinUI>
+    <EnableMsixTooling>false</EnableMsixTooling>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RestorePackagesPath Condition="'$(RestorePackagesPath)' == '' and Exists('$(MSBuildProjectDirectory)\..\..\cache\nuget')">$(MSBuildProjectDirectory)\..\..\cache\nuget</RestorePackagesPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.6.5" />
+    <PackageReference Include="ZXing.Net" Version="0.16.11" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="8.0.0" />
+    <Content Include="Assets\Phoenix.svg" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\Phoenix.ico" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="WebChat\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="..\..\scripts\portable\ZXing-LICENSE.txt" Link="ZXing-LICENSE.txt"
+             CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

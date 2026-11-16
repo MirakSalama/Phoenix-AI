@@ -1,0 +1,381 @@
+<Window
+    x:Class="NpuChat.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NpuChat"
+    Title="Phoenix AI">
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="BaseAlt" />
+    </Window.SystemBackdrop>
+    <Grid x:Name="Surface" RequestedTheme="Dark">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#F01D3046" Offset="0" />
+                <GradientStop Color="#F00A1524" Offset="0.90" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.Resources>
+            <SolidColorBrush x:Key="Muted" Color="#ACBED5" />
+            <SolidColorBrush x:Key="Mint" Color="#95F1CF" />
+            <SolidColorBrush x:Key="Ember" Color="#FFC483" />
+            <SolidColorBrush x:Key="BreathRed" Color="#FF7584" />
+            <SolidColorBrush x:Key="Panel" Color="#C919273A" />
+            <SolidColorBrush x:Key="Edge" Color="#54A5BDDB" />
+            <SolidColorBrush x:Key="ActiveTile" Color="#2845C8A0" />
+            <SolidColorBrush x:Key="ThinkingTile" Color="#28FFC483" />
+            <SolidColorBrush x:Key="MessageTitle" Color="#F4F7FC" />
+            <SolidColorBrush x:Key="ChatBubble" Color="#D8253B55" />
+            <SolidColorBrush x:Key="ChatCanvas" Color="#45101E32" />
+            <SolidColorBrush x:Key="HistorySurface" Color="#FF17283D" />
+            <Style x:Key="PhoenixToolbarButton" TargetType="Button">
+                <Setter Property="Width" Value="34" />
+                <Setter Property="Height" Value="34" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="CornerRadius" Value="7" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="WindowHeader" Padding="13,0" ColumnSpacing="7"
+              Background="#58243752" BorderBrush="#38A5BDDB" BorderThickness="0,0,0,1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid x:Name="WindowBrand" ColumnSpacing="6" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Image Width="29" Height="29" AutomationProperties.AccessibilityView="Raw">
+                    <Image.Source><SvgImageSource UriSource="ms-appx:///Assets/Phoenix.svg" /></Image.Source>
+                </Image>
+                <StackPanel Grid.Column="1" Spacing="1" VerticalAlignment="Center">
+                    <TextBlock x:Name="DesktopTitle" Text="Phoenix AI" FontSize="19" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                    <TextBlock x:Name="DesktopSessionLabel" Foreground="{StaticResource Muted}" TextTrimming="CharacterEllipsis"
+                               FontSize="10" Visibility="Collapsed" />
+                </StackPanel>
+                <Button x:Name="HistoryButton" Grid.Column="2" Style="{StaticResource PhoenixToolbarButton}"
+                        Click="History_Click" AutomationProperties.Name="Show chat history"
+                        ToolTipService.ToolTip="Show chat history" HorizontalAlignment="Left">
+                    <Path Width="16" Height="13" Stretch="Uniform" Data="M1,1 H15 V12 H1 Z M5,1 V12" Stroke="{StaticResource Muted}" StrokeThickness="1.3" />
+                </Button>
+            </Grid>
+            <Grid x:Name="TitleDrag" Grid.Column="1" Background="Transparent" />
+            <StackPanel x:Name="WindowTools" Grid.Column="2" Orientation="Horizontal" Spacing="2" VerticalAlignment="Center">
+                <Button x:Name="RotateButton" Style="{StaticResource PhoenixToolbarButton}" Click="Rotate_Click"
+                        AutomationProperties.Name="Switch to portrait (9:16)" ToolTipService.ToolTip="Switch to portrait (9:16)">
+                    <FontIcon Glyph="&#xE7AD;" FontSize="16" />
+                </Button>
+                <Button Style="{StaticResource PhoenixToolbarButton}" Click="Float_Click"
+                        AutomationProperties.Name="Open floating voice window" ToolTipService.ToolTip="Open floating voice window">
+                    <FontIcon Glyph="&#xE7F6;" FontSize="16" />
+                </Button>
+                <Button x:Name="WorkspaceButton" Style="{StaticResource PhoenixToolbarButton}" Click="Workspace_Click"
+                        AutomationProperties.Name="Tools" ToolTipService.ToolTip="Tools">
+                    <FontIcon Glyph="&#xE821;" FontSize="16" />
+                </Button>
+                <Button x:Name="ShareButton" Style="{StaticResource PhoenixToolbarButton}"
+                        AutomationProperties.Name="Share Phoenix" ToolTipService.ToolTip="Share Phoenix">
+                    <FontIcon Glyph="&#xE72D;" FontSize="16" />
+                </Button>
+                <Button Style="{StaticResource PhoenixToolbarButton}" Click="Settings_Click"
+                        AutomationProperties.Name="Settings" ToolTipService.ToolTip="Settings">
+                    <FontIcon Glyph="&#xE713;" FontSize="16" />
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="FullView" Grid.Row="1" Padding="16,7,16,9" RowSpacing="7" SizeChanged="FullView_SizeChanged">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <SplitView x:Name="HistoryView" Grid.Row="0" IsPaneOpen="False" DisplayMode="Overlay" OpenPaneLength="238"
+                       PaneBackground="{StaticResource HistorySurface}"
+                       PaneOpened="HistoryPane_Changed" PaneClosed="HistoryPane_Changed">
+                <SplitView.Pane>
+                    <Grid Padding="12,8" RowSpacing="8">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid ColumnSpacing="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="History" FontSize="17" FontWeight="SemiBold" VerticalAlignment="Center"
+                                       AutomationProperties.HeadingLevel="Level1" />
+                            <Button Grid.Column="1" Style="{StaticResource PhoenixToolbarButton}" Click="New_Click"
+                                    IsEnabled="{Binding ElementName=NewButton, Path=IsEnabled}"
+                                    AutomationProperties.Name="New chat" ToolTipService.ToolTip="New chat">
+                                <FontIcon Glyph="&#xE710;" FontSize="15" />
+                            </Button>
+                            <Button Grid.Column="2" Style="{StaticResource PhoenixToolbarButton}" Click="CloseHistory_Click"
+                                    AutomationProperties.Name="Hide chat history" ToolTipService.ToolTip="Hide chat history">
+                                <FontIcon Glyph="&#xE76B;" FontSize="15" />
+                            </Button>
+                        </Grid>
+                        <ListView x:Name="HistoryList" Grid.Row="1" IsItemClickEnabled="True"
+                                  ItemClick="HistoryList_ItemClick" SelectionMode="Single"
+                                  AutomationProperties.Name="Saved chats" />
+                        <TextBlock x:Name="HistoryEmpty" Grid.Row="1" Text="No saved chats yet."
+                                   Foreground="{StaticResource Muted}" TextWrapping="Wrap" Visibility="Collapsed" />
+                    </Grid>
+                </SplitView.Pane>
+                <Border Background="{StaticResource ChatCanvas}" CornerRadius="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <local:VoiceOrb x:Name="FullOrb" Visibility="Collapsed" Height="126" Width="126"
+                                        HorizontalAlignment="Center" />
+                        <ScrollViewer x:Name="TranscriptScroll" Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="12,10">
+                            <StackPanel x:Name="Transcript" Spacing="12" MaxWidth="924">
+                                <StackPanel x:Name="Welcome" Spacing="7" Margin="12,14,12,8">
+                                    <TextBlock Text="Phoenix Local AI" Foreground="{StaticResource Ember}"
+                                               FontSize="13" FontWeight="SemiBold" />
+                                    <TextBlock Text="Start a conversation" FontSize="22" FontWeight="SemiBold" />
+                                    <TextBlock Text="Type a message or start voice mode." Foreground="{StaticResource Muted}"
+                                               TextWrapping="Wrap" />
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
+            </SplitView>
+
+            <StackPanel Grid.Row="1" Spacing="5">
+                <Grid x:Name="BioMonitorPanel" Visibility="Collapsed" ColumnSpacing="14" RowSpacing="8"
+                      Padding="0,6,0,4" BorderBrush="{StaticResource Edge}" BorderThickness="0,1,0,0"
+                      AutomationProperties.Name="Phoenix Bio Mon">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition x:Name="BioMonitorGaugeColumn" Width="272" />
+                        <ColumnDefinition x:Name="BioMonitorBrainColumn" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel x:Name="HardwareMonitor" Spacing="4">
+                        <TextBlock Text="Hardware monitors" FontSize="12" FontWeight="SemiBold"
+                                   AutomationProperties.HeadingLevel="Level2" />
+                        <StackPanel Orientation="Horizontal" Spacing="4">
+                            <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                                <FontIcon Glyph="&#xE945;" FontSize="12" Foreground="{StaticResource Mint}" />
+                                <TextBlock x:Name="WorkModeLabel" Text="Smart Auto" FontSize="11" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <Border x:Name="ContextCapsule" VerticalAlignment="Center" BorderBrush="{StaticResource Edge}"
+                                    BorderThickness="1,0,1,0" Padding="6,1">
+                                <StackPanel Spacing="2">
+                                    <TextBlock x:Name="ContextValue" Text="0 / —" FontSize="11" />
+                                    <ProgressBar x:Name="ContextProgress" Height="2" Minimum="0" Maximum="100"
+                                                 Foreground="{StaticResource Mint}" />
+                                </StackPanel>
+                            </Border>
+                            <Button x:Name="BenchmarkButton" MinHeight="26" Padding="5,2" CornerRadius="6"
+                                    Background="Transparent" BorderThickness="0" Click="Benchmark_Click"
+                                    AutomationProperties.Name="Benchmark" ToolTipService.ToolTip="Benchmark">
+                                <StackPanel Orientation="Horizontal" Spacing="4">
+                                    <FontIcon Glyph="&#xE9D2;" FontSize="13" />
+                                    <TextBlock x:Name="BenchmarkLabel" Text="Benchmark" FontSize="11" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <Grid x:Name="DeviceGauges" RowSpacing="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                        </Grid>
+                        <StackPanel x:Name="PhoenixBreathPanel" Padding="9,3,9,0" Spacing="4">
+                            <Grid ColumnSpacing="6">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Phoenix Breath" FontSize="11" FontWeight="SemiBold" />
+                                <TextBlock x:Name="PhoenixBreathValue" Grid.Column="1" Text="Idle" FontSize="11"
+                                           Foreground="{StaticResource Muted}" />
+                            </Grid>
+                            <ProgressBar x:Name="PhoenixBreathProgress" Height="4" MinHeight="0" Maximum="100"
+                                         Foreground="{StaticResource Mint}" Background="{StaticResource Edge}"
+                                         AutomationProperties.Name="Phoenix Breath context use" />
+                        </StackPanel>
+                    </StackPanel>
+
+                    <Border x:Name="BrainMonitor" Grid.Column="1" BorderBrush="{StaticResource Edge}"
+                            BorderThickness="1,0,0,0" Padding="12,0,0,0">
+                        <StackPanel Spacing="4">
+                            <Grid ColumnSpacing="6">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Phoenix Brain Activity" FontSize="12" FontWeight="SemiBold"
+                                           AutomationProperties.HeadingLevel="Level2" />
+                                <TextBlock x:Name="WorkerCount" Grid.Column="1" FontSize="11"
+                                           Foreground="{StaticResource Muted}" VerticalAlignment="Center" />
+                            </Grid>
+                            <Grid x:Name="WorkerServices" ColumnSpacing="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                            <Grid x:Name="WorkerSlots" SizeChanged="WorkerSlots_SizeChanged">
+                                <Canvas x:Name="WorkerConnections" IsHitTestVisible="False"
+                                        AutomationProperties.AccessibilityView="Raw" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <ProgressBar x:Name="ModelProgress" Visibility="Collapsed" IsIndeterminate="True"
+                             AutomationProperties.Name="Model preparation progress" />
+                <ScrollViewer x:Name="DraftAttachmentScroll" Visibility="Collapsed" VerticalScrollMode="Disabled"
+                              HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Auto">
+                    <StackPanel x:Name="DraftAttachmentList" Orientation="Horizontal" Spacing="5" />
+                </ScrollViewer>
+                <Border Background="{StaticResource Panel}" BorderBrush="{StaticResource Edge}" BorderThickness="1"
+                        CornerRadius="11" Padding="5">
+                    <Grid ColumnSpacing="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="AttachButton" Style="{StaticResource PhoenixToolbarButton}" Click="Attach_Click"
+                                AutomationProperties.Name="Attach files" ToolTipService.ToolTip="Attach files or paste from clipboard">
+                            <FontIcon Glyph="&#xE723;" FontSize="17" />
+                        </Button>
+                        <TextBox x:Name="Prompt" Grid.Column="1" PlaceholderText="Message Phoenix…" AcceptsReturn="True"
+                                 MinHeight="40" MaxHeight="94" TextWrapping="Wrap" PreviewKeyDown="Prompt_KeyDown" Paste="Prompt_Paste"
+                                 Background="Transparent" BorderThickness="0" Padding="6,9" />
+                        <Button x:Name="MicButton" Grid.Column="2" Style="{StaticResource PhoenixToolbarButton}" Click="Mic_Click"
+                                AutomationProperties.Name="Dictate a message" ToolTipService.ToolTip="Dictate a message">
+                            <FontIcon x:Name="MicIcon" Glyph="&#xE720;" FontSize="16" />
+                        </Button>
+                        <ToggleButton x:Name="VoiceLoop" Grid.Column="3" Width="34" Height="34" Padding="0" CornerRadius="7"
+                                      Click="VoiceLoop_Click" AutomationProperties.Name="Start voice loop" ToolTipService.ToolTip="Start voice loop">
+                            <FontIcon Glyph="&#xE7F6;" FontSize="16" />
+                        </ToggleButton>
+                        <Button x:Name="SendButton" Grid.Column="4" Click="Send_Click" Width="40" Height="34" Padding="0"
+                                AutomationProperties.Name="Send message" ToolTipService.ToolTip="Send message" CornerRadius="7"
+                                Style="{StaticResource AccentButtonStyle}">
+                            <Button.Resources>
+                                <SolidColorBrush x:Key="AccentButtonBackground" Color="#FFC483" />
+                                <SolidColorBrush x:Key="AccentButtonBackgroundPointerOver" Color="#FFD5A7" />
+                                <SolidColorBrush x:Key="AccentButtonBackgroundPressed" Color="#E9A767" />
+                                <SolidColorBrush x:Key="AccentButtonForeground" Color="#172236" />
+                                <SolidColorBrush x:Key="AccentButtonForegroundPointerOver" Color="#172236" />
+                                <SolidColorBrush x:Key="AccentButtonForegroundPressed" Color="#172236" />
+                            </Button.Resources>
+                            <FontIcon x:Name="SendIcon" Glyph="&#xE724;" FontSize="17" />
+                        </Button>
+                    </Grid>
+                </Border>
+                <Grid ColumnSpacing="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal" Spacing="3">
+                        <Button x:Name="NewButton" Style="{StaticResource PhoenixToolbarButton}" Height="28" Click="New_Click"
+                                AutomationProperties.Name="New chat" ToolTipService.ToolTip="New chat">
+                            <FontIcon Glyph="&#xE710;" FontSize="14" />
+                        </Button>
+                        <ToggleButton x:Name="BioMonitorToggle" Width="34" Height="28" Padding="0" CornerRadius="7"
+                                      Click="ToggleBioMonitor_Click" AutomationProperties.Name="Phoenix Bio Mon"
+                                      ToolTipService.ToolTip="Show Phoenix Bio Mon">
+                            <Path Width="18" Height="14" Stretch="Uniform" Stroke="{StaticResource Mint}"
+                                  StrokeThickness="1.5" Data="M0,8 H4 L7,2 L10,13 L13,6 H18" />
+                        </ToggleButton>
+                    </StackPanel>
+                    <TextBlock x:Name="FullStatus" Grid.Column="1" Text="Starting local engine…" FontSize="11"
+                               Foreground="{StaticResource Muted}" TextWrapping="Wrap" VerticalAlignment="Center" />
+                    <TextBlock x:Name="Stats" Grid.Column="2" Foreground="{StaticResource Muted}" TextWrapping="Wrap"
+                               MaxLines="2" TextTrimming="CharacterEllipsis" TextAlignment="Right"
+                               FontSize="11" Text="LFM2.5 230M · Parakeet · Kokoro" VerticalAlignment="Center"
+                               ToolTipService.ToolTip="{Binding Text, RelativeSource={RelativeSource Self}}" />
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="CompactView" Grid.Row="1" Visibility="Collapsed" Padding="12,4,12,10" RowSpacing="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid ColumnSpacing="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:VoiceOrb x:Name="CompactOrb" Visibility="Collapsed" Height="100" Width="100"
+                                VerticalAlignment="Center" />
+                <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                    <TextBlock x:Name="CompactPhase" Text="Starting" Foreground="{StaticResource Mint}"
+                               FontWeight="SemiBold" FontSize="14" TextTrimming="CharacterEllipsis" />
+                    <TextBlock x:Name="LastUser" Text="Your last message appears here." Foreground="{StaticResource Muted}"
+                               FontSize="11" TextWrapping="Wrap" MaxLines="1" TextTrimming="CharacterEllipsis"
+                               ToolTipService.ToolTip="{Binding Text, RelativeSource={RelativeSource Self}}" />
+                    <TextBlock x:Name="LastReply" Text="Start voice to begin." TextWrapping="Wrap"
+                               LineHeight="17" MaxLines="2" TextTrimming="CharacterEllipsis"
+                               ToolTipService.ToolTip="{Binding Text, RelativeSource={RelativeSource Self}}" />
+                    <TextBlock x:Name="CompactSpeaker" Visibility="Collapsed" />
+                </StackPanel>
+            </Grid>
+            <StackPanel Grid.Row="1" HorizontalAlignment="Right" Orientation="Horizontal" Spacing="5">
+                <Button x:Name="CompactVoice" Style="{StaticResource PhoenixToolbarButton}" Click="CompactVoice_Click"
+                        AutomationProperties.Name="Start voice loop" ToolTipService.ToolTip="Start voice loop">
+                    <FontIcon x:Name="CompactVoiceIcon" Glyph="&#xE7F6;" FontSize="16" />
+                </Button>
+                <Button x:Name="CompactMic" Style="{StaticResource PhoenixToolbarButton}" Click="Mic_Click"
+                        AutomationProperties.Name="Dictate a message" ToolTipService.ToolTip="Dictate a message">
+                    <FontIcon x:Name="CompactMicIcon" Glyph="&#xE720;" FontSize="16" />
+                </Button>
+                <Button Style="{StaticResource PhoenixToolbarButton}" Click="Expand_Click"
+                        AutomationProperties.Name="Open main chat" ToolTipService.ToolTip="Open main chat">
+                    <FontIcon Glyph="&#xE740;" FontSize="16" />
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="StartupView" Grid.Row="1" Visibility="Collapsed">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="24,0,24,24" Spacing="11">
+                <Image Width="108" Height="108" HorizontalAlignment="Center" AutomationProperties.AccessibilityView="Raw">
+                    <Image.Source><SvgImageSource UriSource="ms-appx:///Assets/Phoenix.svg" /></Image.Source>
+                </Image>
+                <TextBlock Text="Phoenix AI" FontSize="39" FontWeight="SemiBold" HorizontalAlignment="Center" />
+                <TextBlock Text="PHOENIX LOCAL AI" Foreground="{StaticResource Ember}" CharacterSpacing="170"
+                           FontSize="11" FontWeight="SemiBold" HorizontalAlignment="Center" />
+                <ProgressBar Width="184" Height="4" IsIndeterminate="True" Foreground="{StaticResource Ember}"
+                             Margin="0,9,0,0" HorizontalAlignment="Center" AutomationProperties.Name="Phoenix startup progress" />
+                <TextBlock x:Name="StartupStatus" Text="Detecting local hardware…" FontSize="13"
+                           Foreground="{StaticResource Muted}" HorizontalAlignment="Center"
+                           TextAlignment="Center" TextWrapping="Wrap" MaxWidth="440" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
