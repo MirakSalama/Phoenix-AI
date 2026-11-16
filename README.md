@@ -1,8 +1,16 @@
-# Phoenix AI
+# Phoenix AI — Local chat on AMD XDNA 1
 
 **Local AI that puts every chip to work.**
 
-Phoenix AI is an experimental local Windows assistant for AMD Phoenix and Hawk Point laptops. It combines NPU chat and dictation with local speech synthesis and can schedule language-model work on the CPU, NPU, iGPU, and dGPU in the same turn.
+Phoenix AI is an experimental **local AI chat and voice app for Windows** built around the **first-generation AMD XDNA 1 NPU** in Ryzen AI Phoenix and Hawk Point laptops. It started as a way to put an overlooked, “orphaned” laptop NPU to work.
+
+## AMD Ryzen AI and XDNA 1 support
+
+- **Local LLM chat on the NPU.** Phoenix runs LFM2.5 230M on AMD XDNA 1 using custom IRON and XRT programs.
+- **Local voice.** Parakeet handles speech-to-text with an XDNA 1 encoder or a CPU fallback. Kokoro handles text-to-speech on the CPU.
+- **CPU and GPU workers.** Phoenix can combine work across the NPU, CPU, integrated GPU, and discrete GPU in one turn. Phoenix Breath shows how much room remains in each active worker’s context.
+
+The experiment reports document the model, backend, and test hardware for each run. See [AMD’s Ryzen AI support notes](https://ryzenai.docs.amd.com/en/latest/relnotes.html) for supported processor and driver combinations.
 
 ## Experiments
 
