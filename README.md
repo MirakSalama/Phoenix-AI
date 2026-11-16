@@ -6,6 +6,12 @@ Phoenix AI is an experimental **local AI chat and voice app for Windows** built 
 
 **Try it on Windows x64.** [Download the portable preview](https://github.com/MirakSalama/Phoenix-AI/releases/tag/v0.1.0-preview.1) and follow the [first-run instructions](dist/README.md). Download chat and voice models separately using the included helper. [Share your hardware and test results](https://github.com/MirakSalama/Phoenix-AI/discussions/4).
 
+## Acknowledgments
+
+Phoenix AI owes its start to **Abhiram Jayasankar and [Ryzen AI NPU Lab](https://github.com/AbhiramJayasankar/ryzenai-npu-lab)**. The lab's original [LFM2.5 230M NPU engine](https://github.com/AbhiramJayasankar/ryzenai-npu-lab/blob/a9531b8/experiments/010_x8_engine.md) became Phoenix's first chat worker. Its [NPU Dictate app](https://github.com/AbhiramJayasankar/ryzenai-npu-lab/tree/a9531b8/apps/npu_dictate) and [Parakeet encoder experiments](https://github.com/AbhiramJayasankar/ryzenai-npu-lab/blob/a9531b8/experiments/012_all_npu_encoder.md) provided the foundation for local dictation. Thank you for publishing the code, measurements, and work it took to make both run on first-generation XDNA.
+
+Thanks to the [MLIR-AIE](https://github.com/Xilinx/mlir-aie), [AMD IRON](https://github.com/amd/IRON), and [XRT](https://github.com/Xilinx/XRT) teams for making the NPU programmable, [Liquid AI](https://huggingface.co/LiquidAI/LFM2.5-230M) for the model behind that first worker, and [llama.cpp](https://github.com/ggml-org/llama.cpp) for the CPU and GPU runners.
+
 ## AMD Ryzen AI and XDNA 1 support
 
 - **Local LLM chat on the NPU.** Phoenix runs LFM2.5 230M on AMD XDNA 1 using custom IRON and XRT programs.
@@ -31,6 +37,6 @@ Model weights, SDKs, built runtimes, caches, and local user data are kept outsid
 
 In **Models & Tools → Manage Models**, use **Check for updates** to compare chat models, D1, Parakeet, and Kokoro against publisher metadata. Phoenix reports differences and flags voice or NPU updates that need a new compatible bundle. Checking versions leaves installed files in place.
 
-## Attribution
+## References
 
-The early AMD NPU experiments and NPU Dictate code build on [Ryzen AI NPU Lab](https://github.com/AbhiramJayasankar/ryzenai-npu-lab/tree/a9531b8). Its copyright and license are preserved in [upstream notices](LICENSES/ryzenai-npu-lab.txt). See the [third-party notices](scripts/portable/Third-party%20notices.md) for packaged runtime and model dependencies.
+See the [project and experiment references](REFERENCES.md) for upstream code, model cards and conversions, benchmark data, libraries, and services. The [Ryzen AI NPU Lab license](LICENSES/ryzenai-npu-lab.txt) and [portable third-party notices](scripts/portable/Third-party%20notices.md) record copyright and license information.
